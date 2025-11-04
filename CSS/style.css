@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--color-1);
   color: #fff;
   margin: 0px;
   overflow-x: hidden;
@@ -206,7 +206,7 @@ article {
 
 .anime-list {
   display: flex;
-  font-size: 21px;
+  font-size: 25px;
   font-weight: bolder;
   flex-wrap: wrap;
   gap: 0.4em 5em;
@@ -214,16 +214,20 @@ article {
   align-items: center;
   list-style: none;
   width: 100%;
-  padding: 8px 0px;
+  padding: 0px 20px;
+  margin: 1em 0px 1.5em 0px;
 }
 
 .anime-list li a {
   color: black;
   text-decoration: none;
+  padding: 8px 0px;
 }
 
 .anime-list li a:hover {
-  color: #b0b0b0;
+  color: #c03e26;
+  transition: 0.4s ease;
+  padding: 8px 0px;
 }
 
 .page-navigation {
@@ -232,211 +236,39 @@ article {
   margin-top: 1.2em;
 }
 
-h2 {
-  color: red;
+.sections {
+  margin: 1em 0px;
+  padding: 1em 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1.5em;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+  background-color: #d4eae7;
+  border-radius: 8px;
+  color: var(--color-1);
+  width: 100%;
+  height: auto;
 }
 
-.sections {
+.section-image {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-main {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  position: relative;
-  left: 0;
-}
-
-#Dragon-Ball-Z {
-  border: 5px solid #fff;
-  background-color: darkslategray;
-  border-radius: 20px;
-  width: 1089px;
-  padding: 20px;
-  margin-top: 10px;
+  gap: 1em;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
   font-family: Poppins;
-}
-
-#Dragon-Ball-Z-image {
-  padding: 0px;
-  margin: 30px 20px 30px 30px;
-  border: 5px solid black;
-  border-radius: 40px;
-  height: 600px;
-}
-
-#One-Piece {
-  border: 5px solid #fff;
-  background-color: darkviolet;
-  border-radius: 20px;
-  width: 1089px;
-  padding: 20px;
-  margin: 0;
-  font-family: Poppins;
-}
-
-#One-Piece-image {
-  padding: 0px;
-  margin: 30px 20px 30px 30px;
-  border: 5px solid black;
-  border-radius: 40px;
-  height: 450px;
-}
-
-#Bleach {
-  border: 5px solid #fff;
-  background-color: darkcyan;
-  border-radius: 20px;
-
-  width: 1089px;
-  padding: 20px;
-  margin: 0;
-  font-family: Poppins;
-}
-
-#Bleach-image {
-  padding: 0px;
-
-  margin: 30px 20px 30px 30px;
-  border: 5px solid black;
-  border-radius: 40px;
-  height: 650px;
-}
-
-#Naruto {
-  border: 5px solid #fff;
-  background-color: darkblue;
-  border-radius: 20px;
-
-  width: 1089px;
-  padding: 20px;
-  margin: 0;
-  font-family: Poppins;
-}
-
-#Naruto-image {
-  padding: 0px;
-
-  margin: 30px 20px 30px 30px;
-  border: 5px solid black;
-  border-radius: 40px;
-  height: 650px;
-}
-
-#Attack-On-Titan {
-  border: 5px solid #fff;
-  background-color: Purple;
-  border-radius: 20px;
-
-  width: 1089px;
-  padding: 20px;
-  margin: 0;
-  font-family: Poppins;
-}
-
-#Attack-On-Titan-image {
-  padding: 0px;
-
-  margin: 30px;
-  border: 5px solid black;
-  border-radius: 40px;
-  height: 640px;
-}
-
-#Hunter-X-Hunter {
-  border: 5px solid #fff;
-  background-color: dodgerblue;
-  border-radius: 20px;
-
-  width: 1089px;
-  padding: 20px;
-  margin: 0;
-  font-family: Poppins;
-}
-
-#Hunter-X-Hunter-image {
-  padding: 0px;
-
-  margin: 30px;
-  border: 10px solid black;
-  border-radius: 40px;
-  height: 600px;
-}
-
-#Death-Note {
-  border: 5px solid #fff;
-  background-color: blueviolet;
-  border-radius: 20px;
-  width: 1089px;
-  padding: 20px;
-  margin: 0;
-  font-family: Poppins;
-}
-
-#Death-Note-image {
-  padding: 0px;
-  margin: 30px;
-  border: 5px solid black;
-  border-radius: 40px;
-  height: 600px;
-}
-
-#Fullmetal-Alchemist-Brotherhood {
-  border: 5px solid #fff;
-  background-color: darkblue;
-  border-radius: 20px;
-
-  width: 1089px;
-  padding: 20px;
-  margin: 0;
-  font-family: Poppins;
-}
-
-#Fullmetal-Alchemist-Brotherhood-image {
-  padding: 0px;
-
-  height: 600px;
-  margin: 30px;
-  border: 5px solid black;
-  border-radius: 40px;
-}
-
-#Monster {
-  border: 5px solid #fff;
-  background-color: darkslateblue;
-  border-radius: 20px;
-
-  width: 1089px;
-  padding: 20px;
-  margin: 0;
-  font-family: Poppins;
-}
-
-#Monster-image {
-  padding: 0px;
-
-  margin: 30px;
-  height: 510px;
-  border: 1 0px solid black;
-  border-radius: 40px;
-}
-
-#Haikyuu {
-  border: 5px solid #fff;
-  background-color: cornflowerblue;
-  border-radius: 20px;
-
-  width: 1089px;
-  padding: 20px;
-  margin: 0;
-  font-family: Poppins;
-}
-
-#Haikyuu-image {
-  height: 600px;
-
-  padding: 0px;
-  border: 5px solid black;
-  border-radius: 40px;
-  margin: 30px;
+  font-size: 20px;
+  line-height: 1.6;
 }
 
 /* Footer Selectors */
