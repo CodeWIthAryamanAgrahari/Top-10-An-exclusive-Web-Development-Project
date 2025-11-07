@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>top 10 cricketers of the worlds</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    :root {
+  --color-1: #0f1017;
+  --text-color: #f0f0f0;
+  --accent-color: #006aff;
+  --background-color: #f6f8f7;
+}*
+
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'poppins';
+        background-color: white;
+    }
+nav {
+  height: 60px;
+  background-color: var(--color-1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: sticky;
+  top: 0; 
+  z-index: 1000; 
+}
+
+.links-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+nav a {
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+
+}
+
+nav .underline-link:hover {
+  background-color: var(--accent-color);
+  transition: 0.7s ease-in-out;
+}
+
+.home-link {
+  margin-right: auto;
+}
+
+.logo-icon:hover {
+  text-decoration: none;
+  background-color: var(--color-1);
+}
+
+nav svg {
+  fill: var(--text-color);
+}
+
+#sidebar-active {
+  display: none;
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+  display: none;
+}
+    back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--color-1);
+  color: var(--text-color);
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  z-index: 1500;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  transform: translateY(-4px);
+  background: var(--accent-color);
+  color: #fff;
+  outline: 2px solid rgba(0, 0, 0, 0.08);
+  outline-offset: 2px;
+}
+
+    
+    h1 {
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 36px;
+        font-family: 'poppins';
+        margin-top: 40px;
+        color: goldenrod;
+        margin: 40px 0 20px;
+    }
+
+    header p {
+        margin: 22px auto;
+        font-family: 'poppins';
+        justify-self: center;
+        width: 80%;
+        font-size: 18px;
+        line-height: 1.7;
+        color: black;
+    }
+
+    ol li {
+        margin-left: 111px;
+        font-family: 'poppins';
+        font-size: 22px;
+    }
+
+    h2 {
+        margin-left: 100px;
+        font-size: 30px;
+        font-family: 'poppins';
+        margin: 40px 0 30px;
+        color: goldenrod;
+        text-align: center;
+    }
+
+    .cricket {
+        font-size: 24px;
+        margin-top: 30px;
+        margin-left: 60px;
+        text-transform: capitalize;
+        color: goldenrod;
+        font-family: 'poppins';
+    }
+
+    .gamechanger table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .gamechanger th {
+        text-align: left;
+        padding: 12px;
+    }
+
+    .gamechanger td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+        color: darkcyan;
+        cursor: pointer;
+    }
+
+    .gamechanger p strong {
+        font-size: 30px;
+        color: goldenrod;
+        margin-left: 60px;
+    }
+
+    .gamechanger p {
+        margin-left: 60px;
+        margin-top: 44px;
+        font-family: 'poppins';
+        font-size: 22px;
+    }
+
+    .gamechanger p img {
+        height: 300px;
+        float: right;
+        margin: 20px;
+        border-radius: 20px;
+        border: 5px solid white;
+    }
+    .back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--color-1);
+  color: var(--text-color);
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  z-index: 1500;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  transform: translateY(-4px);
+  background: var(--accent-color);
+  color: #fff;
+  outline: 2px solid rgba(0, 0, 0, 0.08);
+  outline-offset: 2px;
+}
+</style>
+
+<body id="top">
+  <!-- 🌐 Navbar -->
+
+      <nav>
+        <input type="checkbox" id="sidebar-active" />
+        <label for="sidebar-active" class="open-sidebar-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#e3e3e3"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </label>
+        <label for="sidebar-active" id="overlay"></label>
+        <div class="links-container">
+          <label for="sidebar-active" class="close-sidebar-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+            fill="#e3e3e3"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </label>
+          <a class="logo-icon" href="index.html">
+            <img
+              src="top10.jpg-removebg-preview.png"
+              alt="html.index"
+              width="70px"
+              height="70px"
+            />
+            <h3>INDIA</h3>
+          </a>
+          <a href="index.html" class="underline-link home-link">Home</a>
+          <a href="#" class="underline-link">About</a>
+          <a href="#" class="underline-link">Blog</a>
+          <a href="#" class="underline-link">Login</a>
+          <a href="#" class="underline-link">ContactUs</a>
+        </div>
+      </nav>
+    <header>
+        <h1>Legends of Cricket</h1>
+        <p>
+            Cricket is more than just a sport; it is a theater where legends are forged in the fires of competition.
+            It's a game where a single player can change the course of a match, define an era, and capture the
+            imagination of millions. From the graceful arc of a cover drive to the explosive leap of a fast bowler,
+            greatness wears many faces. Here, we attempt the monumental task of ranking the immortals, the
+            game-changers, and the pure geniuses who have transcended the boundary ropes to become icons. This is our
+            tribute to the Top 10 Cricketers the World Has Ever Seen.The cricketers which are
+            talked about in this website are shortlisted below:-
+        </p>
+        <h2>Top 10 Cricketers of World</h2>
+        <ol>
+            <li>Sachin Tendulkar </li>
+            <li>Sir Don Bradman</li>
+            <li>Sir Vivian Richards</li>
+            <li>Sir Garfield Sobers </li>
+            <li>Shane Warne </li>
+            <li>Virat Kohli</li>
+            <li>Ricky Ponting </li>
+            <li>Jacques Kallis</li>
+            <li>Muttiah Muralitharan</li>
+            <li>Imran Khan</li>
+        </ol>
+    </header>
+    <section id="Sachin Tendulkar">
+        <div class="cricket">1.Sachin Tendulkar</div>
+        <div class="gamechanger">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Born</th>
+                        <th>Nickname</th>
+                        <th>Batting style</th>
+                        <th>Bowlling Style</th>
+                        <th>Role</th>
+                        <th>Major teams</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sachin Ramesh Tendulkar</td>
+                        <td>April 24, 1973, Mumbai, Maharashtra, India</td>
+                        <td>Little Master, Master Blaster, God of Cricket</td>
+                        <td>Right-handed</td>
+                        <td>Right-arm leg break, off break, medium</td>
+                        <td>Top-order batsman</td>
+                        <td>India, Mumbai, Yorkshire, Mumbai Indians</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <img src="https://tse2.mm.bing.net/th/id/OIP.DM73ZAD0Fd4-_EtHpntHZQHaJD?pid=Api&P=0&h=180"
+                    alt="sachin tendulkar">
+                <strong>Sachin Tendulkar - Complete Profile</strong><br />
+                Sachin Ramesh Tendulkar, born on 24 April 1973 in Mumbai, Maharashtra, India, is widely regarded as one
+                of the greatest batsmen in the history of cricket. Standing at 5 feet 5 inches, this right-handed
+                batsman and occasional right-arm leg break, off break, and medium pace bowler earned iconic nicknames
+                including "Little Master," "Master Blaster," and "God of Cricket" throughout his illustrious career as a
+                top-order batsman.<BR />
+                Tendulkar's international career with India spanned from 1989 to 2013, beginning with his Test debut
+                against Pakistan on 15 November 1989 and concluding with his final Test against West Indies on 14
+                November 2013. His ODI journey started on 18 December 1989 against Pakistan and ended on 18 March 2012
+                against the same opposition. Beyond the national team, he represented Mumbai in domestic cricket,
+                Yorkshire in county cricket, and Mumbai Indians in the Indian Premier League.<br />
+
+                His batting statistics are nothing short of extraordinary - in 200 Test matches, he accumulated 15,921
+                runs at an average of 53.78, including 51 centuries and 68 half-centuries, with a highest score of 248
+                not out. In the ODI arena, he played 463 matches, scoring 18,426 runs at an average of 44.83, featuring
+                49 centuries and 96 fifties, and creating history by becoming the first batsman to score a double
+                century (200*) in ODI cricket. Across all first-class cricket, he amassed 25,396 runs with 81 centuries,
+                while in List A matches, he scored 21,999 runs with 60 hundreds.
+
+                As a bowler, Tendulkar claimed 46 wickets in Tests with best figures of 3/10, and 154 wickets in ODIs
+                with an impressive 5/32 as his best performance. His all-round capabilities added significant value to
+                the Indian team throughout his career.<br />
+
+                Tendulkar's career is decorated with numerous records and achievements that may never be broken. He
+                remains the only player in history to score 100 international centuries across all formats. He holds the
+                record for the most runs in international cricket with 34,357 runs and is the leading run-scorer in
+                World Cup history with 2,278 runs. His 673 runs in the 2003 World Cup stand as the most by any batsman
+                in a single tournament. He received 62 Man of the Match awards in ODIs and 15 Man of the Series awards
+                in the same format, both standing as records.
+
+                His trophy cabinet includes the most prestigious honors in Indian sports and beyond - the Arjuna Award
+                in 1994, the Rajiv Gandhi Khel Ratna in 1997, the Padma Shri in 1999, the Padma Vibhushan in 2008, the
+                ICC Cricketer of the Year in 2010, and ultimately the Bharat Ratna, India's highest civilian award, in
+                2013. In 2019, he was rightfully inducted into the ICC Hall of Fame.<br />
+
+                Across five World Cup appearances (1992, 1996, 1999, 2003, and 2011), Tendulkar consistently delivered
+                exceptional performances, culminating in his participation in India's World Cup victory in 2011. His
+                memorable partnerships include a massive 331-run stand with Rahul Dravid against New Zealand in 1999, a
+                249-run partnership with Sourav Ganguly against Sri Lanka in 1999, and a 237-run collaboration with
+                Virender Sehwag against South Africa in 2010.<br />
+
+                His career timeline reads like a storybook - from his first-class debut for Mumbai at just 15 years old
+                in 1988, international debut at 16 against Pakistan in 1989, first Test century against England at Old
+                Trafford in 1990, becoming the youngest Indian to play county cricket for Yorkshire in 1992, his
+                legendary "Desert Storm" innings against Australia in 1998, becoming the first batsman to score 10,000
+                ODI runs in 2001, breaking Sunil Gavaskar's record of 34 Test centuries in 2005, becoming the highest
+                run-scorer in Test cricket in 2008, scoring the first double century in ODI cricket in 2010, reaching
+                his 100th international century against Bangladesh in 2012, and finally retiring from all forms of
+                cricket in 2013.<br />
+
+                On the personal front, Tendulkar married pediatrician Anjali Tendulkar in 1995, and they have two
+                children - daughter Sara and son Arjun, who has followed in his father's footsteps to become a
+                professional cricketer. Known in Mumbai cricket circles as "Tendlya," Sachin has always been celebrated
+                for his humility and exceptional sportsmanship.
+
+                Since retirement, he has remained active in public life, serving as a nominated member of the Rajya
+                Sabha (the Upper House of Parliament) since 2012, working as a cricket commentator and analyst, engaging
+                in philanthropy through various charitable initiatives, co-owning the Bengal Blasters in the Indian
+                Tennis League, and serving as a brand ambassador for numerous products and social causes. His legacy
+                continues to inspire generations of cricketers and sports enthusiasts worldwide.
+            </p>
+        </div>
+    </section>
+    <section class="don bradman">
+        <div class="cricket">2.Sir Don Bradman</div>
+        <div class="gamechanger">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Born</th>
+                        <th>Nickname</th>
+                        <th>Batting style</th>
+                        <th>Bowlling Style</th>
+                        <th>Role</th>
+                        <th>Major teams</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Donald George Bradman</td>
+                        <td>27 August 1908, Cootamundra, New South Wales, Australia</td>
+                        <td>The Don, The Boy from Bowral, Braddles</td>
+                        <td>Right-handed</td>
+                        <td>Right-arm leg break</td>
+                        <td>Top-order batsman</td>
+                        <td>Australia, New South Wales, South Australia</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <img src="https://tse2.mm.bing.net/th/id/OIP.KGw-hX3fnY9pHQiQVzkYUAHaJ8?pid=Api&P=0&h=180"
+                    alt="don bradman">
+
+            </p>
+            <p>
+                <strong>Don Bradman - Complete Profile</strong><br />
+                Sir Donald George Bradman, AC (27 August 1908 – 25 February 2001), often referred to as "The Don", was
+                an Australian international cricketer, widely acknowledged as the greatest batsman of all time.
+                Bradman's career Test batting average of 99.94 has been cited as the greatest achievement by any
+                sportsman in any major.<br />
+
+                Bradman's international career with Australia spanned from 1928 to 1948, though it was significantly
+                interrupted by World War II. He made his Test debut against England on 30 November 1928 and played his
+                final Test on 18 August 1948, captaining the famous "Invincibles" team that went through the entire tour
+                of England undefeated.<br />
+
+                His batting statistics are unparalleled in cricket history - in just 52 Test matches, he accumulated
+                6,996 runs at an astonishing average of 99.94, including 29 centuries and 13 half-centuries, with a
+                highest score of 334. In first-class cricket, he was even more dominant, scoring 28,067 runs at an
+                average of 95.14 with 117 centuries, which included 37 double-centuries, 6 triple-centuries, and 2
+                quadruple-centuries.<br />
+
+                Bradman's career is defined by records and achievements that may never be matched. His Test batting
+                average of 99.94 is more than 50% higher than any other player who has played more than 20 Test matches.
+                He was the fastest to reach 2,000, 3,000, 4,000, and 5,000 Test runs, achieving each milestone in fewer
+                innings than any batsman before him. He scored a century every 2.76 innings, the best rate in Test
+                history, and centuries in 36.25% of his Test innings - both standing as records.
+
+                The 1932-33 "Bodyline" series represented Bradman's greatest challenge, where England devised specific
+                tactics to counter his batting prowess. Even under these extreme circumstances, he still averaged 56.57
+                in the series. His most productive series came against England in 1930, where he scored 974 runs in just
+                five Tests, including centuries in three consecutive matches and a then-world record 334 at
+                Headingley.<br />
+
+                Bradman's career was decorated with numerous honors - he was knighted in 1949 for his services to
+                cricket, becoming Sir Donald Bradman. In 2000, he was named one of Wisden's Five Cricketers of the
+                Century, receiving 100 votes out of 100 possible from the selection panel. The Bradman Museum was
+                established in his honor at Bowral, and the Don Bradman Award is presented annually to Australia's best
+                international cricketer.<br />
+
+                On the personal front, Bradman married Jessie Martha Menzies in 1932, and they had three children
+                together. He was known for his private nature and remained an influential figure in Australian cricket
+                until his later years. Bradman passed away on 25 February 2001 at the age of 92, but his legacy
+                continues to loom large over the sport.<br />
+
+                His impact transcended cricket - he became a national icon in Australia during the Great Depression and
+                World War II, providing inspiration and hope to millions. His technique, concentration, and run-scoring
+                ability set standards that batsmen continue to aspire to, and his name remains synonymous with sporting
+                excellence worldwide.
+            </p>
+        </div>
+    </section>
+    <section id="Vivian Richards">
+        <div class="cricket">3.Sir Vivian Richards</div>
+
+        <div class="gamechanger">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Born</th>
+                        <th>Nickname</th>
+                        <th>Batting style</th>
+                        <th>Bowlling Style</th>
+                        <th>Role</th>
+                        <th>Major teams</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Isaac Vivian Alexander Richards</td>
+                        <td>7 March 1952, St. John's, Antigua</td>
+                        <td>Smokin' Joe ,King Viv,Master Blaster</td>
+                        <td>Right-handed</td>
+                        <td>Right-arm leg break,Right-arm fast-medium</td>
+                        <td>Top-order batsman</td>
+                        <td>West Indies, Leeward Islands, Somerset, Queensland, Glamorgan</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.ffPa74wz3tFY2OCAHr50XwHaJF?pid=Api&P=0&h=180"
+                    alt="vivan richards">
+                <strong>Sir Vivian Richards - Complete Profile</strong><br />
+                Sir Isaac Vivian Alexander Richards, born on 7 March 1952 in St. John's, Antigua, is widely regarded as
+                one of the most destructive and dominant batsmen in cricket history. Known for his aggressive batting
+                style and intimidating presence at the crease, Richards revolutionized limited-overs batting and was the
+                backbone of the mighty West Indies team during their golden era.<br />
+
+                Richards' international career with West Indies spanned from 1974 to 1991, making his Test debut against
+                India on 22 November 1974 and playing his final Test against England on 8 August 1991. His ODI career
+                began on 7 June 1975 against Sri Lanka and concluded on 27 March 1991 against the same opposition.
+                Beyond international cricket, he represented Leicestershire, Somerset, and Glamorgan in county cricket,
+                and Queensland in Australian domestic cricket.
+
+                His batting statistics reflect his destructive capabilities - in 121 Test matches, he scored 8,540 runs
+                at an average of 50.23, including 24 centuries and 45 half-centuries, with a highest score of 291. In
+                ODIs, he was even more impactful, scoring 6,721 runs at an average of 47.00 with 11 centuries and 45
+                fifties, maintaining a strike rate of 90.20 that was extraordinary for his era. His highest ODI score of
+                189* against England in 1984 stood as the highest individual score in ODIs for 13 years.<br />
+
+                Richards' career is decorated with remarkable achievements and records. He was the fastest to reach
+                1,000 runs in ODI cricket at the time, achieving the milestone in just 21 innings. He played a pivotal
+                role in West Indies winning the first two Cricket World Cups in 1975 and 1979, with his explosive 138*
+                in the 1979 final against England remaining one of the greatest innings in World Cup history. He was the
+                first batsman to score both a century and take five wickets in an ODI match.
+
+                The Antiguan maestro was known for his unique batting style - often batting without a helmet, walking
+                down the pitch to fast bowlers, and dominating bowling attacks with sheer power and confidence. His
+                captaincy record was equally impressive, leading West Indies in 50 Tests with 27 wins and only 8 losses,
+                maintaining their dominance in world cricket throughout the 1980s.<br />
+
+                Richards received numerous honors throughout his career, including being named one of Wisden's Five
+                Cricketers of the Century in 2000. He was knighted in 1999 for his services to cricket, becoming Sir
+                Vivian Richards. The main stadium in Antigua was renamed the Sir Vivian Richards Stadium in his honor,
+                and he was inducted into the ICC Hall of Fame in 2009.
+
+                On the personal front, Richards is known for his charismatic personality and has been involved in
+                various business ventures and commentary roles post-retirement. He served as a mentor for the West
+                Indies team and has been an influential figure in cricket administration. His son, Mali Richards, has
+                also pursued a career in professional cricket.<br />
+
+                Richards' impact on the game extends beyond statistics - he changed how batsmen approached limited-overs
+                cricket, bringing an aggressive, fearless mentality that inspired generations of players. His swagger,
+                confidence, and sheer dominance at the crease made him one of the most feared batsmen of all time, and
+                his legacy continues to influence modern batting approaches in both Test and limited-overs cricket.
+
+            </p>
+            <section id="Garfield Sobers">
+                <div class="cricket">4.4.Sir Garfield Sobers</div>
+
+                <div class="gamechanger">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Born</th>
+                                <th>Nickname</th>
+                                <th>Batting style</th>
+                                <th>Bowlling Style</th>
+                                <th>Role</th>
+                                <th>Major teams</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Garfield St Aubrun Sobers</td>
+                                <td> 28 July 1936, Bridgetown, Barbados</td>
+                                <td>Garry ,The Greatest All-Rounder,The Barbados Maestro</td>
+                                <td>Left-handed</td>
+                                <td>Left-arm fast-medium, Left-arm orthodox spin, Left-arm wrist spin</td>
+                                <td>All-rounder</td>
+                                <td>West Indies, Barbados, South Australia, Nottinghamshire</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.a7uZCc0O2GKo83v3Z8uxsAHaLg?pid=Api&P=0&h=180"
+                            alt="garry sobers">
+                        <strong>Sir Garfield Sobers - Complete Profile</strong><br />
+                        Sir Garfield St Aubrun Sobers, born on 28 July 1936 in Bridgetown, Barbados, is universally
+                        acknowledged as cricket's greatest all-rounder. A genuine genius who excelled in every
+                        department of the game, Sobers could bat, bowl both pace and spin with equal effectiveness, and
+                        field brilliantly in any position.
+
+                        Sobers' international career with West Indies spanned from 1954 to 1974, making his Test debut
+                        against England on 30 March 1954 at just 17 years old and playing his final Test against England
+                        on 5 April 1974. His first-class career was even more extensive, representing Barbados, South
+                        Australia, and Nottinghamshire with remarkable success across all formats of the game.<br />
+
+                        His batting statistics are extraordinary - in 93 Test matches, he scored 8,032 runs at an
+                        average of 57.78, including 26 centuries and 30 half-centuries, with a highest score of 365 not
+                        out. This world record score of 365* stood for 36 years until broken by Brian Lara. In
+                        first-class cricket, he was even more dominant, amassing 28,315 runs at an average of 54.87 with
+                        86 centuries.
+
+                        As a bowler, Sobers was equally remarkable - he took 235 Test wickets at an average of 34.03,
+                        with best figures of 6/73. His bowling versatility was unprecedented: he could bowl left-arm
+                        fast-medium, left-arm orthodox spin, and left-arm wrist-spin with equal competence. In
+                        first-class cricket, he captured 1,043 wickets, completing the incredible double of 10,000 runs
+                        and 1,000 wickets.<br />
+
+                        Sobers' career is defined by records and achievements that showcase his complete mastery of
+                        cricket. He was the first batsman to hit six sixes in a single over in first-class cricket,
+                        achieving this feat against Glamorgan's Malcolm Nash in 1968 while playing for Nottinghamshire.
+                        He held the record for the highest individual Test score (365*) for 36 years. His all-round
+                        capabilities are unmatched - he is the only player to score 8,000+ runs and take 200+ wickets in
+                        Test cricket.
+
+                        The Barbadian maestro captained West Indies in 39 Test matches, winning 9 and losing only 10,
+                        while establishing himself as one of the most respected leaders in cricket history. His
+                        leadership combined tactical acumen with his extraordinary playing skills, making him a natural
+                        choice to lead his team.
+
+                        Sobers received numerous honors throughout his career, including being knighted by Queen
+                        Elizabeth II in 1975 for his services to cricket. He was named one of Wisden's Five Cricketers
+                        of the Century in 2000, receiving 90 out of 100 possible votes from the selection panel. The
+                        main stand at Kensington Oval in Barbados is named in his honor, and he was inducted into the
+                        ICC Hall of Fame in 2009.<br />
+
+                        On the personal front, Sobers is known for his graceful batting style and sportsmanship. He
+                        played cricket with a joy and flair that captivated audiences worldwide. Post-retirement, he has
+                        served as a selector and mentor for West Indies cricket and has been involved in various
+                        charitable initiatives.<br />
+
+                        Sobers' impact on the game extends far beyond statistics - he redefined what was possible for an
+                        all-rounder in cricket. His ability to excel in every facet of the game set a standard that no
+                        player has matched since. His graceful batting, versatile bowling, and brilliant fielding made
+                        him the complete cricketer, and his legacy continues to inspire generations of players who
+                        aspire to master multiple disciplines in the sport. Many cricket historians and experts consider
+                        him the most complete cricketer ever to play the game.
+
+                    </p>
+                    <section id="Shane Warne">
+                        <div class="cricket">5.Shane Warne</div>
+
+                        <div class="gamechanger">
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>Full Name</th>
+                                        <th>Born</th>
+                                        <th>Nickname</th>
+                                        <th>Batting style</th>
+                                        <th>Bowlling Style</th>
+                                        <th>Role</th>
+                                        <th>Major teams</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> Shane Keith Warne</td>
+                                        <td>3 September 1969, Upper Ferntree Gully, Victoria, Australia </td>
+                                        <td>Warnie</td>
+                                        <td>Right-handed</td>
+                                        <td>Right-arm leg spin</td>
+                                        <td>bowler</td>
+                                        <td>Australia, Hampshire, Rajasthan Royals, Victoria</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                <img src="https://tse1.mm.bing.net/th/id/OIP.2y23h4iMMymcd6gQTXjGTwHaLG?pid=Api&P=0&h=180"
+                                    alt="shane wrane">
+                                <strong>Shane Warne - Complete Profile</strong><br />
+                                Shane Keith Warne, born on 13 September 1969 in Upper Ferntree Gully, Victoria,
+                                Australia, is universally regarded as one of the greatest bowlers in cricket history and
+                                arguably the most influential spin bowler the game has ever seen. With his magical
+                                leg-spin deliveries and incredible cricketing brain, Warne revolutionized spin bowling
+                                and brought it back into prominence in an era dominated by fast bowling.<br />
+
+                                Warne's international career with Australia spanned from 1992 to 2007, making his Test
+                                debut against India on 2 January 1992 and playing his final Test against England on 2
+                                January 2007. His ODI career began on 24 March 1993 against New Zealand and concluded
+                                with his retirement from international cricket after the 2007 World Cup. Beyond
+                                international cricket, he represented Victoria, Hampshire, and Rajasthan Royals with
+                                tremendous success.
+
+                                His bowling statistics are legendary - in 145 Test matches, he took 708 wickets at an
+                                average of 25.41, including 37 five-wicket hauls and 10 ten-wicket matches, with best
+                                figures of 8/71. This made him the first bowler to reach 700 Test wickets, a record he
+                                held until surpassed by Muttiah Muralitharan. In ODIs, he was equally effective,
+                                claiming 293 wickets at an average of 25.73 with best figures of 5/33. In first-class
+                                cricket, he captured 1,319 wickets, demonstrating his consistent dominance across all
+                                formats.<br />
+
+                                Warne's career is defined by magical deliveries and match-winning performances that
+                                changed the course of cricket history. His "Ball of the Century" to Mike Gatting in the
+                                1993 Ashes series - a leg-break that pitched outside leg stump and hit the top of off
+                                stump - announced his arrival on the world stage and is considered one of the greatest
+                                deliveries ever bowled. He played a crucial role in Australia's 1999 World Cup victory,
+                                taking four wickets in the semi-final against South Africa and contributing
+                                significantly throughout the tournament.
+
+                                The Victorian maestro was known for his incredible variations - the leg-break, googly,
+                                flipper, and slider - all delivered with remarkable control and guile. His ability to
+                                read batsmen and set traps was unparalleled, making him a captain's dream bowler.
+                                Warne's leadership qualities were also evident when he led Rajasthan Royals to victory
+                                in the inaugural Indian Premier League in 2008, showcasing his tactical brilliance in
+                                the T20 format.<br />
+
+                                Warne's career was decorated with numerous honors and records. He was named one of
+                                Wisden's Five Cricketers of the Century in 2000, receiving the most votes of any bowler.
+                                He won the ICC Cricket Hall of Fame induction in 2013. His 96 Ashes wickets and dominant
+                                performances against England made him a central figure in one of cricket's greatest
+                                rivalries. He was also a useful lower-order batsman, scoring 3,154 Test runs with 12
+                                half-centuries, including a highest score of 99.
+
+                                Off the field, Warne was known for his charismatic personality, making him one of
+                                cricket's most marketable and recognizable figures worldwide. He worked as a television
+                                commentator and cricket analyst post-retirement, where his insightful commentary and
+                                deep understanding of the game were highly valued. He also engaged in various
+                                philanthropic activities and business ventures.<br />
+
+                                Warne's impact on cricket extends far beyond statistics - he inspired generations of
+                                young cricketers to take up leg-spin bowling, a art that was considered dying before his
+                                emergence. His showmanship, combined with extraordinary skill, made Test cricket
+                                exciting and accessible to new audiences. His rivalry with batsmen like Sachin
+                                Tendulkar, Brian Lara, and others created some of the most memorable contests in cricket
+                                history.<br />
+
+                                Tragically, Shane Warne passed away on 4 March 2022 from a suspected heart attack at the
+                                age of 52, sending shockwaves through the cricket world and beyond. His legacy continues
+                                through the Shane Warne Legacy Foundation, which aims to teach leg-spin bowling to young
+                                cricketers worldwide. Many current international spinners cite Warne as their
+                                inspiration, and his impact on the game ensures that his magical legacy will live on for
+                                generations to come.
+                            </p>
+                            <section id="Virat Kholi">
+                                <div class="cricket">6.Virat Kholi</div>
+
+                                <div class="gamechanger">
+                                    <table border="1">
+                                        <thead>
+                                            <tr>
+                                                <th>Full Name</th>
+                                                <th>Born</th>
+                                                <th>Nickname</th>
+                                                <th>Batting style</th>
+                                                <th>Bowlling Style</th>
+                                                <th>Role</th>
+                                                <th>Major teams</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Virat Kohli </td>
+                                                <td>5 November 1988, Delhi, India </td>
+                                                <td>King Kohli, The Chase Master, Run Machine</td>
+                                                <td>Right-handed</td>
+                                                <td>Right-arm medium</td>
+                                                <td>Top-order batsman</td>
+                                                <td>India, Royal Challengers Bangalore (IPL), Delhi</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p>
+                                        <img src="https://i.pinimg.com/736x/0e/d5/8c/0ed58cccd51c4758e634d0b29e8cb0c2.jpg"
+                                            alt="virat">
+                                        <strong>Virat Kohli - Complete Profile</strong><br />
+                                        Virat Kohli, born on 5 November 1988 in Delhi, India, has established himself as
+                                        one of the greatest batsmen in cricket history and the most dominant all-format
+                                        player of his generation. Known for his aggressive batting style, unparalleled
+                                        consistency, and exceptional chasing abilities, Kohli has redefined modern
+                                        batting standards and continues to be the cornerstone of the Indian cricket team
+                                        across all formats.
+
+                                        His international career, beginning in 2008, has seen him represent India in
+                                        over 115 Tests, 300+ ODIs, and 125+ T20Is, amassing more than 27,000
+                                        international runs collectively. The Delhi-born maestro has rewritten record
+                                        books with his extraordinary achievements across all three formats of the game.
+                                        His journey from a talented youngster leading India to the 2008 Under-19 World
+                                        Cup victory to becoming the backbone of the senior team has been nothing short
+                                        of remarkable.<br />
+
+                                        He recently became the first batsman to score 51 ODI centuries, surpassing his
+                                        idol Sachin Tendulkar's long-standing record, and holds the distinction of being
+                                        the fastest to reach every 1000-run milestone in ODI cricket from 8,000 to
+                                        14,000 runs. His statistics are equally impressive in Test cricket with nearly
+                                        9,000 runs and 30 centuries, and in T20 Internationals with over 4,100 runs,
+                                        maintaining an average above 50 in both white-ball formats, which is
+                                        unprecedented in cricket history.<br />
+
+                                        The 2024 T20 World Cup performance was particularly historic, where he played a
+                                        pivotal role in India's championship victory and was named Player of the
+                                        Tournament for his clutch performances in high-pressure situations. His
+                                        match-winning innings in the final against South Africa cemented his legacy as
+                                        one of cricket's greatest big-match players. This victory added to his already
+                                        impressive ICC trophy collection that includes the 2011 ODI World Cup and 2013
+                                        Champions Trophy.<br />
+
+                                        Beyond his batting prowess, Kohli's fitness revolution has transformed modern
+                                        cricket, setting new athletic standards that have inspired an entire generation
+                                        of cricketers to prioritize physical conditioning. His leadership tenure saw
+                                        India achieve historic Test series victories in Australia and reach the
+                                        inaugural World Test Championship final. Under his captaincy, India became the
+                                        number one Test team for consecutive years and developed into a formidable force
+                                        in overseas conditions.
+
+                                        Throughout his career, Kohli has received numerous honors including the Rajiv
+                                        Gandhi Khel Ratna, Padma Shri, and multiple ICC awards. He has consistently
+                                        topped the ICC batting rankings across all three formats, demonstrating his
+                                        remarkable consistency and adaptability to different conditions and formats. His
+                                        unique ability to maintain high strike rates while preserving classical
+                                        technique makes him a rare combination of modern power and traditional
+                                        elegance.<br />
+
+                                        On the personal front, Kohli married Bollywood actress Anushka Sharma in 2017,
+                                        and they have two children. He is known for his passionate and aggressive
+                                        on-field demeanor, which has redefined the competitive spirit of the Indian
+                                        cricket team. Off the field, he is actively involved in various business
+                                        ventures and runs the Virat Kohli Foundation, which focuses on supporting
+                                        underprivileged children and promoting sports among youth.<br />
+
+                                        Kohli's impact extends beyond cricket statistics - he has become a global
+                                        sporting icon, brand ambassador for numerous international brands, and a role
+                                        model for aspiring athletes worldwide. His dedication, work ethic, and
+                                        consistent performances across all conditions have solidified his position as
+                                        one of the greatest cricketers of all time, with many experts considering him
+                                        the most complete batsman of the modern era. His legacy continues to grow as he
+                                        approaches the twilight of his career, leaving an indelible mark on the sport
+                                        that will inspire future generations of cricketers.
+
+
+
+                                    </p>
+                                    <div class="back-to-top">
+         <a
+      href="#top"
+      class="back-to-top"
+      aria-label="Back to top"
+      title="Back to top"
+      >↑</a>
+      </div>
+                          
+</body>
+
+</html>
