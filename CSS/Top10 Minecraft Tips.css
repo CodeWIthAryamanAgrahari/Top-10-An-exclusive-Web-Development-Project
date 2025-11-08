@@ -1,0 +1,187 @@
+/* The provided CSS code snippet is setting up styles for a website's navigation bar and sidebar. Here
+is a breakdown of what the code is doing: */
+/* The `:root` selector in CSS is used to define global CSS variables that can be accessed and used
+throughout the stylesheet. In this specific code snippet, the `:root` selector is setting various
+custom properties (CSS variables) with specific color values and font families. These variables can
+then be referenced and utilized in other parts of the CSS code to maintain consistency and make it
+easier to update styles across the entire website by simply changing the variable values in one
+place. */
+/*Universal styles */
+:root {
+  --color-1: #1f2430;
+  --accent-color: #e74c3c;
+  --text-color: #ecf0f1;
+  --background-color: #0d121e;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #2980b9;
+  --secondary-color: #27ae60;
+  --hover-color: #8e44ad;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+a {
+  color: white;
+  transition: 0.6s ease;
+}
+
+/* Navigation Selectors */
+/* The CSS code snippet provided is defining the styling for a navigation bar and sidebar for a
+website. Here is a breakdown of what the code is doing: */
+nav {
+  height: 60px;
+  background-color: var(--color-1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.links-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav a {
+  height: 100%;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 5px;
+  transition: background-color 0.7s ease;
+  gap: 10px;
+}
+
+nav .underline-link:hover {
+  background-color: #353b44;
+}
+
+.home-link {
+  margin-right: auto;
+}
+
+.logo-icon:hover {
+  text-decoration: none;
+  background-color: var(--color-1);
+}
+
+.logo-icon {
+  gap: 0;
+}
+
+nav svg {
+  fill: var(--text-color);
+}
+
+#sidebar-active {
+  display: none;
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+  display: none;
+}
+
+#overlay {
+  display: none;
+}
+
+@media (max-width: 610px) {
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .links-container {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 300px;
+    background-color: var(--color-1);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 1s ease;
+    backdrop-filter: blur(5px);
+  }
+
+  nav a {
+    box-sizing: border-box;
+    height: auto;
+    width: 90%;
+    padding: 20px 30px;
+    justify-content: flex-start;
+    border-radius: 5px;
+    background-color: #353b44;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    margin: 0px auto;
+  }
+
+  .underline-link {
+    margin: 8px auto;
+  }
+
+  .home-link {
+    margin-top: 0;
+  }
+
+  .logo-icon {
+    text-decoration: none;
+    background-color: var(--color-1);
+    padding: 0;
+    gap: 0px;
+  }
+
+  .open-sidebar-button,
+  .close-sidebar-button {
+    display: block;
+    padding: 20px;
+  }
+
+  .close-sidebar-button {
+    padding: 20px 20px 0px 20px;
+  }
+
+  #sidebar-active:checked ~ .links-container {
+    right: 0;
+  }
+
+  .logo-icon img {
+    width: 100px;
+    height: 100%;
+  }
+
+  #sidebar-active:checked ~ #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+  }
+}
