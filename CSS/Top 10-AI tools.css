@@ -1,3 +1,8 @@
+/* The above code is a CSS stylesheet that defines the styling for a website. Here is a summary of what
+the code is doing: */
+/* The `:root` selector in CSS is used to define global CSS variables that can be accessed and used
+throughout the stylesheet. In this specific code snippet, the `:root` selector is defining four
+custom properties or CSS variables: */
 :root {
   --color-1: #0f1017;
   --text-color: #f0f0f0;
@@ -32,6 +37,8 @@ a {
 }
 
 /* Navigation Selectors */
+/* The CSS code snippet provided is defining the styling for a navigation bar and sidebar for a
+website. Here is a breakdown of what the code is doing: */
 nav {
   height: 60px;
   background-color: var(--color-1);
@@ -141,30 +148,6 @@ nav svg {
 }
 
 /* Main Selectors */
-aside {
-  background-color: var(--color-1);
-  color: var(--text-color);
-  padding: 20px;
-  width: 250px;
-  height: fit-content;
-  border-radius: 10px;
-  margin: 20px;
-  font-family: Poppins, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-aside div {
-  margin-bottom: 15px;
-  width: fit-content;
-}
-
-aside div img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
 article {
   flex: 1;
   padding: 20px;
@@ -175,6 +158,12 @@ article {
   font-family: Poppins, sans-serif;
   font-size: 18px;
   line-height: 1.6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .top-10-container {
@@ -222,30 +211,11 @@ main {
 
 .wrapper2 {
   display: flex;
-  gap: 20px;
+  gap: 5px;
   justify-content: center;
   align-items: flex-start;
   min-height: calc(100vh - 60px);
-}
-
-#divider {
-  height: 2px;
-  background-color: #ccc;
-  margin: 20px 0;
-  display: flex;
   flex-direction: column;
-  gap: 1em;
-  font-size: 18px;
-  line-height: 1.6;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: start;
-  font-family: Poppins;
-  background-color: #d4eae7;
-  border-radius: 8px;
-  color: var(--color-1);
-  width: 100%;
-  height: auto;
 }
 
 section {
@@ -253,6 +223,8 @@ section {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -295,23 +267,6 @@ button {
 }
 button:hover {
   background-color: var(--accent-color);
-}
-
-@media (aspect-ratio: 16/9) and (max-width: 900px), (max-width: 610px) {
-  .wrapper2 {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  aside {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  article {
-    width: 100%;
-    margin: 10px 0;
-  }
 }
 
 /* Footer Selectors */
