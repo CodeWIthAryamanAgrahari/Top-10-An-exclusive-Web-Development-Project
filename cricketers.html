@@ -172,7 +172,10 @@ nav svg {
     tr:hover {
         color: darkcyan;
         cursor: pointer;
+        background-color: black;
+        transition: 0.5s ease;
     }
+    
 
     .gamechanger p strong {
         font-size: 30px;
@@ -194,6 +197,97 @@ nav svg {
         border-radius: 20px;
         border: 5px solid white;
     }
+    footer {
+        background-color: #111315;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        color: var(--text-color);
+        margin-top: 40px;
+    }
+
+    footer h3 {
+        color: var(--text-color);
+        text-align: center;
+        font-family: Poppins;
+        font-size: 36px;
+        font-family: Open Sans;
+        font-weight: bolder;
+        background: linear-gradient(to bottom,
+                #133050,
+                #1691c5,
+                #11344f,
+                #1691c5,
+                #133050);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    footer ul {
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    footer ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    footer ul li a:hover {
+        cursor: pointer;
+        color: #c03e26;
+        transition: 0.4s ease;
+    }
+
+    footer .social-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 28px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .social-icons i {
+        cursor: pointer;
+        transition: 0.5s ease;
+        border: 2px solid var(--text-color);
+        padding: 10px;
+        border-radius: 50%;
+        background: transparent;
+        color: var(--text-color);
+        opacity: 0.4;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    footer .social-icons i:hover {
+        opacity: 1;
+        color: var(--text-color);
+        border: 2px solid var(--accent-color);
+        background-color: var(--accent-color);
+    }
+
+    footer .paragraph {
+        font-size: 18px;
+        max-width: 600px;
+        text-align: center;
+        font-family: Poppins;
+        color: var(--text-color);
+    }
+
     .back-to-top {
   position: fixed;
   right: 20px;
@@ -219,6 +313,117 @@ nav svg {
   color: #fff;
   outline: 2px solid rgba(0, 0, 0, 0.08);
   outline-offset: 2px;
+}
+@media screen and (max-width: 768px) {
+    /* Add your responsive styles here */
+    .open-sidebar-button,
+    .close-sidebar-button {
+      display: block;
+      padding: 0 20px;
+      cursor: pointer;
+    }
+    .links-container {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background-color: var(--color-1);
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 60px;
+        transition: right 0.3s ease;
+        z-index: 1100;
+        }
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+    #overlay {
+        display: none;
+    }
+    #sidebar-active:checked ~ #overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+    }
+    .open-sidebar-button svg,
+    .close-sidebar-button svg {
+      display: block;
+      margin: 0 auto;
+    }
+    /* Improved responsive tweaks for <=768px */
+    body { font-size: 16px; line-height: 1.5; }
+    h1 { font-size: 28px; margin: 20px 12px; }
+    h2 { font-size: 22px; margin: 18px 12px; }
+    h3 { font-size: 20px; margin: 16px 12px; }
+    /* Navbar / sidebar */
+    nav { height: 56px; }
+    .open-sidebar-button,
+    .close-sidebar-button { display: block; }
+    .links-container { width: 78vw; max-width: 320px; padding: 60px 12px 20px 12px; right: -100%; }
+    #sidebar-active:checked ~ .links-container { right: 0; transition: right .28s ease; box-shadow: -8px 0 24px rgba(0,0,0,.35); }
+    #overlay { display: none; }
+    #sidebar-active:checked ~ #overlay { display: block; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 1050; }
+
+    /* Links inside sidebar */
+    nav a { padding: 12px 16px; font-size: 16px; width: 100%; box-sizing: border-box; }
+    .logo-icon { display: flex; gap: 8px; align-items: center; padding: 8px 12px; }
+    .logo-icon h3 { font-size: 18px; margin: 0; color: var(--text-color); }
+
+    /* Content spacing */
+    header p { width: calc(100% - 32px); margin: 12px auto; font-size: 15px; }
+    ol { margin: 8px 20px; padding-left: 20px; }
+    ol li { margin-left: 0; margin-bottom: 8px; font-size: 18px; }
+
+    /* Section headings & list items */
+    .cricket { margin-left: 12px; font-size: 20px; }
+
+    /* Make tables scrollable instead of overflowing or shrinking */
+    .gamechanger table {
+        width: 100%;
+        margin: 14px 12px;
+        border-collapse: collapse;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        box-shadow: none;
+    }
+    .gamechanger th,
+    .gamechanger td { padding: 10px; white-space: nowrap; font-size: 14px; }
+
+    /* Paragraphs and images */
+    .gamechanger p { margin: 12px; font-size: 15px; line-height: 1.6; }
+    .gamechanger p img {
+        float: none;
+        display: block;
+        margin: 12px auto;
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border-width: 3px;
+    }
+
+    /* Footer adjustments */
+    footer { padding: 20px 12px; gap: 12px; }
+    footer h3 { font-size: 24px; }
+
+    /* Back-to-top smaller on phones */
+    .back-to-top { right: 12px; bottom: 12px; width: 40px; height: 40px; font-size: 18px; }
+
+    /* Reduce deep nested margins to avoid huge vertical spacing */
+    .gamechanger p strong { font-size: 20px; margin-left: 0; display: block; text-align: left; }
+
+    /* Utility: stack long descriptions for accessibility */
+    @media (max-width: 420px) {
+        nav a { font-size: 15px; padding: 10px 14px; }
+        .gamechanger th, .gamechanger td { font-size: 13px; padding: 8px; }
+        header p { font-size: 14px; }
+    }
 }
 </style>
 
@@ -816,10 +1021,477 @@ nav svg {
                                         the most complete batsman of the modern era. His legacy continues to grow as he
                                         approaches the twilight of his career, leaving an indelible mark on the sport
                                         that will inspire future generations of cricketers.
+<section id="Ricky Ponting">
+                                    <div class="cricket">7.Ricky Ponting</div>
+                                    <div class="gamechanger">
+                                        <table border="1">
+                                            <thead>
+                                                <tr>
+                                                    <th>Full Name</th>
+                                                    <th>Born</th>
+                                                    <th>Nickname</th>
+                                                    <th>Batting style</th>
+                                                    <th>Bowlling Style</th>
+                                                    <th>Role</th>
+                                                    <th>Major teams</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> Ricky Thomas Ponting</td>
+                                                    <td>19 December 1974, Launceston, Tasmania, Australia</td>
+                                                    <td>Punter, Ponts, Ron</td>
+                                                    <td>Right-handed</td>
+                                                    <td>Right-arm medium</td>
+                                                    <td>Top-order batsman</td>
+                                                    <td>Australia, Tasmania, Kolkata Knight Riders (IPL), Mumbai Indians
+                                                        (IPL)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>
+                                            <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200/lsci/db/PICTURES/CMS/83900/83996.jpg"
+                                                alt="Ricky Ponting">
+                                            <strong>Ricky Ponting - Complete Profile</strong><br />
+                                            Ricky Thomas Ponting, born on 19 December 1974 in Launceston, Tasmania,
+                                            Australia, is widely regarded as one of the most successful captains in
+                                            cricket history and one of the greatest batsmen of the modern era. Known for
+                                            his aggressive batting style, exceptional leadership, and sharp cricketing
+                                            brain, Ponting dominated world cricket during Australia's golden era as both
+                                            a prolific run-scorer and a highly successful captain.<br />
 
+                                            Ponting's international career with Australia spanned from 1995 to 2012,
+                                            making his ODI debut against South Africa on 15 February 1995 and his Test
+                                            debut against Sri Lanka on 8 December 1995. His final Test match was against
+                                            South Africa on 3 December 2012, concluding a remarkable 17-year
+                                            international career. Beyond the Australian team, he represented Tasmania in
+                                            domestic cricket and played for Kolkata Knight Riders and Mumbai Indians in
+                                            the IPL.,<br />
+
+                                            His batting statistics are extraordinary - in 168 Test matches, he scored
+                                            13,378 runs at an average of 51.85, including 41 centuries and 62
+                                            half-centuries, with a highest score of 257. In ODIs, he was equally
+                                            dominant, scoring 13,704 runs at an average of 42.03 with 30 centuries and
+                                            82 fifties. He remains the only Australian cricketer to surpass 13,000 runs
+                                            in both Test and ODI cricket, showcasing his remarkable consistency across
+                                            formats.
+
+                                            Ponting's captaincy record is arguably his greatest legacy - he led
+                                            Australia in 324 international matches with 220 wins, making him one of the
+                                            most successful captains in cricket history. Under his leadership, Australia
+                                            won two consecutive Cricket World Cups (2003 and 2007) and maintained their
+                                            number one Test ranking for several years. His aggressive, uncompromising
+                                            leadership style and tactical acumen made him a feared opponent and
+                                            respected leader.<br />
+
+                                            The Tasmanian maestro was known for his trademark pull shot and back-foot
+                                            punches, playing with an intensity and aggression that defined Australia's
+                                            dominant era. His fielding at backward point was exceptional, with his quick
+                                            reflexes and accurate throwing making him one of the best fielders of his
+                                            generation. Ponting's ability to perform under pressure was legendary, with
+                                            numerous match-winning innings in crucial situations throughout his career.
+
+                                            Ponting's career is decorated with numerous records and achievements. He
+                                            holds the record for most Test wins as captain (48) and most consecutive
+                                            Test wins as captain (16). He was part of Australian teams that won 16
+                                            consecutive Test matches twice under different captains. His 140* in the
+                                            2003 World Cup final against India remains one of the greatest innings in
+                                            World Cup history, showcasing his ability to perform on the biggest
+                                            stage.<br />
+
+                                            Throughout his career, Ponting received numerous honors including the Allan
+                                            Border Medal multiple times, ICC Player of the Year in 2006 and 2007, and
+                                            being named in ICC's Test and ODI Teams of the Century. He was appointed as
+                                            a Member of the Order of Australia in 2012 for his services to cricket and
+                                            charity. In 2018, he was inducted into the ICC Hall of Fame, cementing his
+                                            status as one of cricket's all-time greats.
+
+                                            On the personal front, Ponting married Rianna Cantor in 2002, and they have
+                                            three children together. Known for his competitive spirit and professional
+                                            approach, Ponting has been involved in various charitable initiatives,
+                                            particularly through the Ponting Foundation which supports young Australians
+                                            and their families affected by cancer.<br />
+
+                                            Since retirement, Ponting has become one of cricket's most respected
+                                            commentators and analysts, known for his sharp insights and deep
+                                            understanding of the game. He has also served as a coach and mentor, working
+                                            with Delhi Capitals in the IPL and providing guidance to emerging Australian
+                                            cricketers. His autobiography "Ponting: At the Close of Play" provides deep
+                                            insights into his career and philosophy.
+
+                                            Ponting's impact on cricket extends far beyond statistics - he embodied the
+                                            competitive spirit and excellence that defined Australian cricket during its
+                                            most dominant period. His legacy continues through his commentary work,
+                                            coaching contributions, and the standards he set for professionalism and
+                                            leadership in the sport. Many current international players cite Ponting as
+                                            their inspiration, and his influence on the game ensures that his legacy
+                                            will endure for generations to come.<br />
+
+
+                                        </p>
+                                    </div>
+                                    <section id="Jacques Kallis">
+                                        <div class="cricket">8.Jacques Kallis</div>
+                                        <div class="gamechanger">
+                                            <table border="1">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Full Name</th>
+                                                        <th>Born</th>
+                                                        <th>Nickname</th>
+                                                        <th>Batting style</th>
+                                                        <th>Bowlling Style</th>
+                                                        <th>Role</th>
+                                                        <th>Major teams</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> Jacques Henry Kallis</td>
+                                                        <td>16 October 1975, Cape Town, South Africa</td>
+                                                        <td>The King, Jakes, Kallis the Wall</td>
+                                                        <td>Right-handed</td>
+                                                        <td>Right-arm fast-medium</td>
+                                                        <td> All-Rounder</td>
+                                                        <td>South Africa, Cape Cobras, Kolkata Knight Riders (IPL),
+                                                            Royal Challengers Bangalore (IPL)</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p>
+                                                <img src="https://wallpapercave.com/wp/wp7519465.jpg" alt="Kallis">
+                                                <strong>Jacques Kallis - Complete Profile</strong><br />
+                                                Jacques Henry Kallis, born on 16 October 1975 in Pinelands, Cape Town,
+                                                South Africa, is universally acknowledged as the greatest all-rounder in
+                                                cricket history and one of the most complete players to ever grace the
+                                                game. Known for his technically perfect batting, effective medium-pace
+                                                bowling, and safe fielding, Kallis dominated international cricket for
+                                                nearly two decades as a genuine match-winner in all three formats.<br />
+
+                                                Kallis' international career with South Africa spanned from 1995 to
+                                                2014, making his Test debut against England on 14 December 1995 and his
+                                                ODI debut against England on 9 January 1996. His final Test match was
+                                                against India on 30 December 2013, concluding an illustrious 18-year
+                                                international career. Beyond the national team, he represented Western
+                                                Province in domestic cricket and played for Kolkata Knight Riders, Royal
+                                                Challengers Bangalore, and Sydney Thunder in various T20 leagues.<br />
+
+                                                His batting statistics are phenomenal - in 166 Test matches, he scored
+                                                13,289 runs at an average of 55.37, including 45 centuries and 58
+                                                half-centuries, with a highest score of 224. In ODIs, he scored 11,579
+                                                runs at an average of 44.36 with 17 centuries and 86 fifties. As a
+                                                bowler, he took 292 Test wickets at an average of 32.65 and 273 ODI
+                                                wickets at an average of 31.79, making him the only player in history to
+                                                score over 10,000 runs and take 250+ wickets in both Test and ODI
+                                                cricket.
+
+                                                Kallis' all-round capabilities are unmatched in cricket history. He is
+                                                the only cricketer to achieve the double of 10,000+ runs and 250+
+                                                wickets in both Test and ODI formats. His 23 Man of the Match awards in
+                                                Test cricket are the most by any player, and his 32 Player of the Series
+                                                awards across formats demonstrate his consistent match-winning
+                                                contributions over two decades.<br />
+
+                                                The South African maestro was known for his technically perfect batting
+                                                style, combining solid defense with powerful strokeplay. His bowling was
+                                                equally effective - generating consistent bounce and movement with his
+                                                height and high action. In the field, he was reliable in any position,
+                                                particularly in the slips where he took 200 catches in Test cricket,
+                                                making him one of the most successful slip fielders ever.
+
+                                                Kallis' career is defined by remarkable consistency and longevity. He
+                                                scored centuries against all Test-playing nations and was particularly
+                                                dominant in away conditions, averaging over 50 in every major
+                                                Test-playing country except Bangladesh. His ability to perform under
+                                                pressure was legendary, with numerous match-winning contributions with
+                                                both bat and ball in crucial situations throughout his career.<br />
+
+                                                Throughout his career, Kallis received numerous honors including the ICC
+                                                Test Player of the Year in 2005, ICC Player of the Year in 2005, and
+                                                being named Wisden Cricketer of the Year in 2013. He was the first South
+                                                African to score 10,000 Test runs and the only player to be in the top
+                                                10 of both batting and bowling rankings simultaneously in Test cricket.
+                                                In 2020, he was inducted into the ICC Hall of Fame, recognizing his
+                                                status as one of cricket's all-time greats.
+
+                                                On the personal front, Kallis has maintained a relatively private life,
+                                                known for his quiet professionalism and dedication to his craft. His
+                                                fitness and work ethic were exemplary, allowing him to maintain peak
+                                                performance across all three formats well into his late 30s. He has been
+                                                involved in various charitable initiatives, particularly through cricket
+                                                development programs in South Africa.<br />
+
+                                                Since retirement, Kallis has transitioned into coaching and commentary,
+                                                sharing his vast knowledge and experience with the next generation of
+                                                cricketers. He has worked as a batting consultant with the South African
+                                                team and various IPL franchises, known for his technical insights and
+                                                understanding of the game's nuances.
+
+                                                Kallis' impact on cricket extends far beyond statistics - he redefined
+                                                what was possible for an all-rounder in the modern era. His ability to
+                                                excel as a world-class batsman while maintaining effectiveness as a
+                                                frontline bowler set a standard that no player has matched. Many cricket
+                                                experts and former players consider him the most complete cricketer
+                                                ever, with some arguing that his all-round contributions make him the
+                                                greatest cricketer of all time, ahead of even Bradman and Tendulkar in
+                                                terms of overall value to a team.<br />
+                                            </p>
+                                        </div>
 
 
                                     </p>
+                                    <section id="Muttiah Muralitharan">
+                                            <div class="cricket"> 9.Muttiah Muralitharan</div>
+                                            <div class="gamechanger">
+                                                <table border="1">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Full Name</th>
+                                                            <th>Born</th>
+                                                            <th>Nickname</th>
+                                                            <th>Batting style</th>
+                                                            <th>Bowlling Style</th>
+                                                            <th>Role</th>
+                                                            <th>Major teams</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td> Muttiah Muralitharan</td>
+                                                            <td>17 April 1972, Kandy, Sri Lanka</td>
+                                                            <td>Murali</td>
+                                                            <td>Right-handed</td>
+                                                            <td>Right-arm off-spin</td>
+                                                            <td> Bowler</td>
+                                                            <td>Sri Lanka, Tamil Union Cricket and Athletic Club,
+                                                                Worcestershire, Chennai Super Kings (IPL)</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p>
+                                                    <img src="http://starsunfolded.com/wp-content/uploads/2018/04/Muttiah-Muralitharan-images-HD.jpg"
+                                                        alt="Muralitharan">
+                                                    <strong>Muttiah Muralitharan - Complete Profile</strong><br />
+                                                    Muttiah Muralitharan, born on 17 April 1972 in Kandy, Sri Lanka, is
+                                                    widely regarded as one of the greatest bowlers in cricket history
+                                                    and the highest wicket-taker in both Test and One Day International
+                                                    (ODI) formats. Known for his unique bowling action, exceptional
+                                                    spin, and remarkable ability to deceive batsmen, Muralitharan
+                                                    revolutionized off-spin bowling and left an indelible mark on the
+                                                    game.<br />
+                                                    Muralitharan's international career with Sri Lanka spanned from 1992
+                                                    to 2010, making his Test debut against Australia on 28 August 1992
+                                                    and his ODI debut against Pakistan on 25 April 1993. His final Test
+                                                    match was against India on 3 March 2010, concluding an illustrious
+                                                    18-year international career. Beyond the national team, he
+                                                    represented Tamil Union Cricket and Athletic Club in domestic
+                                                    cricket and played for Worcestershire in county cricket and Chennai
+                                                    Super Kings in the IPL.<br />
+                                                    His bowling statistics are nothing short of legendary - in 133 Test
+                                                    matches, he took 800 wickets at an average of 22.72, including 67
+                                                    five-wicket hauls and 22 ten-wicket matches, with best figures of
+                                                    9/51. In ODIs, he was equally dominant, claiming 534 wickets at an
+                                                    average of 23.08 with best figures of 7/30. He remains the only
+                                                    bowler to take 800 Test wickets and 500+ ODI wickets, making him the
+                                                    highest wicket-taker in both formats.
+
+                                                    Muralitharan's career was defined by his unique bowling action,
+                                                    which generated extraordinary turn and bounce. His repertoire
+                                                    included the classic off-break, the doosra (which spins away from
+                                                    right-handed batsmen), and the topspinner, all delivered with
+                                                    remarkable consistency and control. Despite controversies
+                                                    surrounding his bowling action, he was repeatedly cleared by ICC
+                                                    testing and became an icon of perseverance and skill.
+
+                                                    The Sri Lankan maestro played a crucial role in Sri Lanka's rise as
+                                                    a cricketing power, particularly in their historic 1996 World Cup
+                                                    victory where his bowling was instrumental throughout the
+                                                    tournament. His partnership with Chaminda Vaas formed one of the
+                                                    most lethal bowling combinations in cricket history, complementing
+                                                    each other's styles perfectly.<br />
+
+                                                    Throughout his career, Muralitharan received numerous honors
+                                                    including the Wisden Leading Cricketer in the World in 2000, ICC
+                                                    World ODI XI multiple times, and being named one of Wisden's Five
+                                                    Cricketers of the Year in 1999. He was appointed as a Member of the
+                                                    Order of the British Empire (MBE) in 2011 for his services to
+                                                    cricket. In 2016, he was inducted into the ICC Hall of Fame,
+                                                    cementing his status as one of cricket's all-time greats.
+
+                                                    On the personal front, Muralitharan married Madhimalar Ramamurthy in
+                                                    2005, and they have two children. Known for his cheerful personality
+                                                    and ever-present smile, he has been involved in various charitable
+                                                    initiatives, particularly through the Foundation of Goodness which
+                                                    supports underprivileged communities in Sri Lanka.<br />
+
+                                                    Since retirement, Muralitharan has worked as a bowling coach and
+                                                    consultant, sharing his vast knowledge with teams around the world
+                                                    including Sunrisers Hyderabad in the IPL and the Australian national
+                                                    team. His insights into spin bowling, particularly his mastery of
+                                                    variations and reading batsmen, have made him one of the most
+                                                    sought-after coaching talents in cricket.
+
+                                                    Muralitharan's impact on cricket extends far beyond statistics - he
+                                                    revolutionized spin bowling and inspired generations of young
+                                                    cricketers in Sri Lanka and across the subcontinent. His journey
+                                                    from a tea plantation in Kandy to becoming the highest wicket-taker
+                                                    in cricket history stands as a testament to talent, hard work, and
+                                                    resilience. Many cricket experts and former players consider him not
+                                                    just the greatest spinner, but arguably the greatest bowler of all
+                                                    time, with his record of 800 Test wickets likely to stand for
+                                                    generations to come.<br />
+
+
+                                                </p>
+                                            </div>
+                                            <section id="Imran Khan">
+                                                <div class="cricket">10.Imran Khan</div>
+                                                <div class="gamechanger">
+                                                    <table border="1">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Full Name</th>
+                                                                <th>Born</th>
+                                                                <th>Nickname</th>
+                                                                <th>Batting style</th>
+                                                                <th>Bowlling Style</th>
+                                                                <th>Role</th>
+                                                                <th>Major teams</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Imran Ahmed Khan Niazi</td>
+                                                                <td>3 October 1952, Lahore, Pakistan</td>
+                                                                <td>Captain, Immy</td>
+                                                                <td>Right-handed</td>
+                                                                <td>Right-arm fast</td>
+                                                                <td>All-rounder</td>
+                                                                <td>Pakistan, Sussex, Worcestershire</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <p>
+                                                        <img src="https://images.squarespace-cdn.com/content/v1/54930cd0e4b006aa21ffee77/1422023374246-IEHVNVCAXOB9BB6LC13X/image-asset.jpeg"
+                                                            alt="imran khan">
+                                                        <strong>Imran Khan - Complete Profile</strong><br />
+                                                        Imran Khan, born on 5 October 1952 in Lahore, Pakistan, is
+                                                        celebrated as one of cricket's greatest all-rounders and most
+                                                        inspirational captains in the sport's history. Known for his
+                                                        charismatic leadership, exceptional fast bowling, and valuable
+                                                        lower-order batting, Khan transformed Pakistan into a
+                                                        world-class cricketing nation and led them to their greatest
+                                                        triumph - the 1992 Cricket World Cup victory.<br />
+
+                                                        Khan's international career with Pakistan spanned from 1971 to
+                                                        1992, making his Test debut against England on 3 June 1971 and
+                                                        his ODI debut in the 1974-75 season. His final international
+                                                        match was the historic 1992 World Cup final at the Melbourne
+                                                        Cricket Ground, where he captained Pakistan to victory against
+                                                        England. Beyond international cricket, he played for
+                                                        Worcestershire, Sussex, and New South Wales, gaining valuable
+                                                        experience that shaped his cricketing philosophy.
+
+                                                        His all-round statistics are remarkable - in 88 Test matches, he
+                                                        scored 3,807 runs at an average of 37.69 with 6 centuries, while
+                                                        taking 362 wickets at an average of 22.81 with best figures of
+                                                        8/58. In ODIs, he scored 3,709 runs and took 182 wickets. He
+                                                        achieved the rare double of 3,000 runs and 300 wickets in Test
+                                                        cricket, placing him among the elite group of genuine
+                                                        all-rounders who excelled with both bat and ball.<br />
+
+                                                        Khan's captaincy legacy is arguably his greatest contribution to
+                                                        cricket. He took over a struggling Pakistan team in 1982 and
+                                                        built them into world-beaters through his visionary leadership
+                                                        and emphasis on fitness and discipline. His "cornered tigers"
+                                                        speech before the 1992 World Cup final became legendary,
+                                                        inspiring his team to overcome odds and claim Pakistan's first
+                                                        World Cup title. Under his leadership, Pakistan became known for
+                                                        their fighting spirit and ability to win from impossible
+                                                        situations.
+
+                                                        The Pakistani legend was known for his graceful bowling action
+                                                        that generated tremendous pace and swing, particularly his
+                                                        lethal in-swinging yorker that claimed many key wickets. As a
+                                                        batsman, he played several match-saving and match-winning
+                                                        innings, often coming in at crucial moments to rescue Pakistan.
+                                                        His fielding, particularly in the slips, was also of high
+                                                        quality, making him a complete package on the cricket
+                                                        field.<br />
+
+                                                        Khan's career is decorated with numerous honors and records. He
+                                                        was named Wisden Cricketer of the Year in 1983 and was one of
+                                                        Wisden's Five Cricketers of the Century in 2000. He led Pakistan
+                                                        to their first Test series victory in England in 1987 and was
+                                                        instrumental in developing young talent that would serve
+                                                        Pakistan cricket for years to come. His leadership both on and
+                                                        off the field made him a national icon in Pakistan.
+
+                                                        On the personal front, Khan has led a remarkable life beyond
+                                                        cricket. He studied at Oxford University where he honed his
+                                                        cricketing skills while pursuing his education. After
+                                                        retirement, he founded Shaukat Khanum Memorial Cancer Hospital &
+                                                        Research Centre in memory of his mother, which has become one of
+                                                        Pakistan's premier cancer treatment facilities. He also
+                                                        established Namal University in Mianwali to provide quality
+                                                        education to underprivileged students.<br />
+
+                                                        Khan's transition from sports to politics has been equally
+                                                        historic. He founded the Pakistan Tehreek-e-Insaf (PTI)
+                                                        political party in 1996 and after decades of political struggle,
+                                                        became the 22nd Prime Minister of Pakistan in 2018. His journey
+                                                        from cricket captain to national leader is unprecedented in
+                                                        world history, making him one of the most remarkable figures to
+                                                        emerge from the world of sports.
+
+                                                        Imran Khan's impact extends far beyond cricket statistics - he
+                                                        represents the power of determination, leadership, and vision.
+                                                        His ability to inspire teams to achieve beyond their perceived
+                                                        capabilities, his commitment to social causes, and his
+                                                        transformation into a national political leader make him one of
+                                                        the most influential sports personalities of all time. His
+                                                        legacy continues to inspire not just cricketers but anyone who
+                                                        believes in turning vision into reality against all odds.<br />
+                                                    </p>
+                                                </div>
+                                                <footer>
+                                                        <h3>Top 10</h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="index.html">Home</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">About</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Contact</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Blog</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Services</a>
+                                                      <      </li>
+                                                            <li>
+                                                                <a href="#">Pricing</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="social-icons">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                            <i class="fab fa-twitter"></i>
+                                                            <i class="fab fa-instagram"></i>
+                                                            <i class="fab fa-pinterest"></i>
+                                                            <i class="fab fa-linkedin"></i>
+                                                        </div>
+                                                        <div class="paragraph">
+                                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                            Quibusdam,
+                                                            veniam? Laboriosam saepe dolorum cumque, a, esse rerum sint
+                                                            quidem omnis
+                                                            odit hic rem!
+                                                        </div>
+                                                    </footer>
+
                                     <div class="back-to-top">
          <a
       href="#top"
