@@ -8,6 +8,8 @@
   --secondary-color: #27ae60;
   --hover-color: #8e44ad;
   --btn-color: #2980b9;
+  --section-color: #171c28;
+  --sec-icon-fill: #27ae60;
 }
 
 /* Light theme overrides */
@@ -462,4 +464,71 @@ article::after {
 
 .card:hover {
   transform: translateY(-6px);
+}
+
+.sections {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 20px 40px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: var(--section-color);
+  padding: clamp(24px, 4vw, 32px);
+  gap: 20px;
+  border: 1px solid #232832;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+}
+
+section:hover {
+  border: 1px solid rgba(231, 76, 60, 0.55);
+  transform: translateY(-8px);
+  box-shadow: 0px 24px 36px rgba(0, 0, 0, 0.32);
+}
+
+.sec-num {
+  font-size: 30px;
+  font-weight: bold;
+  color: #e74c3c;
+  text-shadow: 0px 8px 28px #e74c3c;
+}
+
+.sec-app-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sec-paragraph {
+  opacity: 0.9;
+}
+
+.sec-texticons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sec-texticon {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
+  font-size: 0.792rem;
+}
+
+.sec-texticon i {
+  color: var(--sec-icon-fill);
+  display: inline;
+  opacity: 1;
+}
+
+.sec-texticon-para {
+  opacity: 0.9;
+  font-size: 14px;
 }
