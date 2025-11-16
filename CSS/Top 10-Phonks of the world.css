@@ -1,0 +1,412 @@
+/* Universal Selectors */
+:root {
+  --color-1: #1a1625;
+  --accent-color: #e74c3c;
+  --text-color: #ecf0f1;
+  --background-color: #0d0b14;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #c277fb;
+  --secondary-color: #27ae60;
+  --hover-color: #8e44ad;
+  --btn-color: #2980b9;
+  --section-color: #171c28;
+  --sec-icon-fill: #27ae60;
+  --article-color: #412859;
+}
+
+/* Light theme overrides */
+#theme-switch:checked ~ .page {
+  --color-1: #ffffff;
+  --text-color: #1f2430;
+  --background-color: #f1f4f8;
+  --primary-color: #1f6feb;
+  --secondary-color: #1a7f37;
+  --hover-color: #6f42c1;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.page {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+.theme-switch-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#theme-switch:focus-visible ~ .page nav .theme-toggle {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  background-color: #342645;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a {
+  color: white;
+  transition: 0.6s ease;
+  text-decoration: none;
+}
+
+/* Navigation Selectors */
+/* The CSS code snippet provided is defining the styling for a navigation bar and sidebar for a
+website. Here is a breakdown of what the code is doing: */
+nav {
+  height: 60px;
+  background-color: var(--color-1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  gap: 8px;
+  transition: background-color 0.4s ease, box-shadow 0.3s ease,
+    backdrop-filter 0.3s ease;
+  backdrop-filter: saturate(140%) blur(6px);
+  box-shadow: 0 2px 10px var(--color-1);
+}
+
+.links-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--color-1);
+}
+
+nav a {
+  height: 100%;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.7s ease;
+  gap: 10px;
+}
+
+nav .underline-link:hover {
+  background-color: #2d1b3d;
+  transform: scale(1.05);
+  color: var(--text-color);
+  transition: all 0.7s ease;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(157, 78, 221, 0.2);
+  text-decoration: none;
+}
+
+/* Light mode: make nav link text white on hover for contrast */
+#theme-switch:checked ~ .page nav .underline-link:hover {
+  color: #ffffff;
+}
+
+.home-link {
+  margin-right: auto;
+}
+
+.logo-icon:hover {
+  text-decoration: none;
+  background-color: var(--color-1);
+}
+
+.logo-icon {
+  gap: 0;
+}
+
+nav svg {
+  fill: var(--text-color);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  margin-right: 10px;
+  background-color: #342645;
+  border: 1px solid rgba(199, 125, 255, 0.4);
+  color: var(--text-color);
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, border-color 0.25s ease,
+    transform 0.2s ease, color 0.25s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-1px);
+}
+
+.theme-toggle i {
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.theme-toggle .icon-light {
+  display: none;
+}
+
+#theme-switch:checked ~ .page nav .theme-toggle {
+  background-color: rgba(31, 36, 48, 0.08);
+  border-color: rgba(31, 36, 48, 0.24);
+}
+
+#theme-switch:checked ~ .page nav .theme-toggle:hover {
+  background-color: rgba(31, 36, 48, 0.18);
+}
+
+#theme-switch:checked ~ .page nav .theme-toggle .icon-light {
+  display: inline-block;
+}
+
+#theme-switch:checked ~ .page nav .theme-toggle .icon-dark {
+  display: none;
+}
+
+#sidebar-active {
+  display: none;
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+  display: none;
+}
+
+#overlay {
+  display: none;
+}
+
+@media (max-width: 778px) {
+  nav {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .links-container {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    z-index: 1002;
+    width: 300px;
+    background-color: var(--color-1);
+    box-shadow: -5px 0 5px rgba(157, 78, 221, 0.25);
+    transition: 1s ease;
+    backdrop-filter: blur(5px);
+    height: calc(100vh - 60px);
+  }
+
+  #overlay {
+    display: none;
+  }
+
+  nav a {
+    box-sizing: border-box;
+    height: auto;
+    width: 90%;
+    padding: 20px 30px;
+    justify-content: flex-start;
+    border-radius: 5px;
+    background-color: #2d1b3d;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    margin: 0px auto;
+  }
+
+  #theme-switch:checked ~ .page nav .underline-link {
+    background-color: #fff;
+    border: 2px solid #5e5e5e;
+    box-shadow: rgb(0 0 0 / 21%) 8px 9px 8px 1px;
+  }
+
+  .underline-link {
+    margin: 8px auto;
+  }
+
+  .home-link {
+    margin-top: 0;
+  }
+
+  .logo-icon {
+    text-decoration: none;
+    background-color: var(--color-1);
+    padding: 0;
+    gap: 0px;
+  }
+
+  .open-sidebar-button,
+  .close-sidebar-button {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .theme-toggle {
+    margin-right: 16px;
+  }
+
+  .close-sidebar-button {
+    padding: 10px 10px 0px 10px;
+  }
+
+  #sidebar-active:checked ~ .links-container {
+    right: 0;
+  }
+
+  .logo-icon img {
+    width: 100px;
+    height: 100%;
+  }
+
+  #sidebar-active:checked ~ #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+    display: block;
+    transition: all 0.9s ease;
+    background: transparent;
+  }
+
+  .page {
+    padding-top: 0px;
+  }
+}
+
+/* Main Selectors */
+article {
+  background: linear-gradient(
+      160deg,
+      rgba(199, 125, 255, 0.25),
+      rgba(157, 78, 221, 0.3)
+    ),
+    rgba(13, 11, 20, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  padding: clamp(24px, 5vw, 64px);
+  border-radius: 40px;
+  margin: 10vh auto 10vh;
+  overflow: hidden;
+  max-width: 95vw;
+}
+
+article::after {
+  content: "";
+  background: radial-gradient(160deg, #5f3485);
+  position: absolute;
+  background: radial-gradient(
+    circle at top right,
+    rgba(157, 78, 221, 0.4),
+    transparent 55%
+  );
+  inset: 0;
+  pointer-events: none;
+  border-radius: 40px;
+}
+
+.article-span1 {
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: var(--primary-color);
+}
+
+.article-h1 {
+  font-size: 40px;
+  background: linear-gradient(135deg, #c77dff, #9d4edd, #e0aaff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.article-para {
+  color: var(--text-color);
+  font-size: 19px;
+  margin-bottom: 5px;
+  opacity: 0.9;
+}
+
+.article-btns {
+  display: inline-flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  color: var(--text-color);
+  background-color: #c77dff;
+  border-radius: 50px;
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
+  padding: 15px 20px;
+}
+
+.article-btn1 {
+  box-shadow: 0px 14px 22px 0px rgba(199, 125, 255, 0.4);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.article-btn1:hover {
+  box-shadow: 0px 18px 25px 0px rgba(199, 125, 255, 0.5);
+  transform: translateY(-2px);
+}
