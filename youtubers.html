@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 YouTubers of the World</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-dP4+7Yw8WwZp0V5nE7O1S4Jw0zJgIVDSwXBlao+LXgKm0kCzqJbfF/6/Tf2gzrjM6BfO5nXGuk7+g1dZ5yY1xA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      :root {
+        --bg: #08090b;
+        --card: #11131a;
+        --text: #f4f6fb;
+        --muted: #9aa2b1;
+        --accent: #ff585d;
+        --accent-2: #40c9ff;
+        --border: rgba(255, 255, 255, 0.12);
+      }
+     *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+     }
+     body{
+        font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', sans-serif;
+        background: radial-gradient(circle at top, #15192a, #050608 60%);
+        color: var(--text);
+        min-height: 100vh;
+      }
+        a{
+            text-decoration: none;
+            color: inherit;
+     }
+     nav {
+        height: 64px;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        background-color: rgba(5, 6, 8, 0.9);
+        backdrop-filter: blur(12px);
+        z-index: 10;
+      }
+      .brand {
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        letter-spacing: 2px;
+      }
+      .brand i{
+        color: var(--accent);
+        margin-top: 20px;
+      }
+    .nav-links  {
+        font-weight: 500;
+        display: flex;
+      gap: 16px;
+    }
+ .nav-links a{
+        padding: 8px 12px;
+        border-radius: 999px;
+        transition: background-color 0.3s;
+        border: 1px solid transparent;
+      }
+      .nav-links a:hover {
+        background-color: rgba(255, 88, 93, 0.1);
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      header {
+        padding: 24px 24px; /* Reduced padding */
+        max-width: 1100px;
+        margin: 0 auto;
+        color: var(--muted);
+      }
+      .youtube {
+        display: inline-flex;
+        
+        color: var(--muted);
+        font-weight: 700;
+        align-items: center;
+        
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .youtube::before {
+        content: '';
+        width: 32px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+      }
+      header h1 {
+        font-size: 45px;
+        margin: 0 0 16px;
+        font-weight: 900;
+        color: var(--text);
+        line-height: 1.1;
+      }
+      header p {
+        line-height: 1.6;
+        font-size: 18px;
+      }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand">
+          <i class="fa-brands fa-youtube"></i>
+          top 10
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#leaders">About</a>
+          <a href="#insights">Contact</a>
+          <a href="#future">Service</a>
+        </div>
+    </nav>
+   
+    <header>
+        <span class="youtube">2025 Power List</span>
+        <h1>The 10 Most Influential<br>YouTubers in the World</h1>
+        <p>
+            From entertainment juggernauts to educational pioneers, these creators reach<br> 
+            billions of viewers each month and redefine modern media. Explore audience scale,<br> 
+            signature formats, and why each channel remains at the top of the creator economy.
+        </p>
+    </header>
+</body>
+</html>
