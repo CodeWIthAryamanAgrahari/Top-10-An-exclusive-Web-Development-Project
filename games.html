@@ -9,12 +9,12 @@
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Poppins:wght@300;400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
 
-:root {
-  --color-1: #0f1017;
-  --text-color: #f0f0f0;
-  --accent-color: #006aff;
-  --background-color: #f6f8f7;
-}
+  :root {
+    --color-1: #0f1017;
+    --text-color: #f0f0f0;
+    --accent-color: #006aff;
+    --background-color: #f6f8f7;
+  }
 
   * {
     margin: 0;
@@ -98,7 +98,10 @@
   }
 
   .game-section img {
-    height: 300px;
+
+    width: 350px;
+    height: 220px;
+    object-fit: cover;
     float: right;
     margin: 20px;
     border-radius: 20px;
@@ -161,399 +164,388 @@
     text-decoration: none;
     color: rgb(26, 161, 182);
   }
-::selection{
+
+  ::selection {
     background-color: black;
     color: green;
   }
 
   /* Navigation Selectors */
-nav {
-  height: 60px;
-  background-color: var(--color-1);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.links-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-/* Navigation Selectors */
-nav {
-  height: 60px;
-  background-color: var(--color-1);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.links-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-nav a {
-  height: 100%;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-nav .underline-link:hover {
-  background-color: var(--accent-color);
-  transition: 0.7s ease-in-out;
-}
-
-.home-link {
-  margin-right: auto;
-}
-
-.logo-icon:hover {
-  text-decoration: none;
-  background-color: var(--color-1);
-}
-
-nav svg {
-  fill: var(--text-color);
-}
-
-#sidebar-active {
-  display: none;
-}
-
-.open-sidebar-button,
-.close-sidebar-button {
-  display: none;
-}
-/* Responsive CSS Fixes */
-html {
-  font-size: 16px;
-}
-
-/* Tablet Styles (1024px and below) */
-@media (max-width: 1024px) {
-  .game-section {
-    margin: 20px 30px;
-  }
-  
-  h2, .game-title {
-    margin-left: 30px;
-  }
-  
-  .game-section img {
-    max-width: 40%;
-    height: 250px;
-  }
-}
-
-/* Mobile Styles (768px and below) */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-  
-  h1 {
-    font-size: 28px;
-    margin-top: 30px;
-  }
-  
-  header p {
-    font-size: 13px;
-    width: 90%;
-    margin: 15px auto;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin: 30px 20px 0 20px;
-    text-align: center;
-  }
-  
-  .game-title {
-    font-size: 22px;
-    margin: 15px 20px;
-    text-align: center;
-  }
-  
-  ol {
-    gap: 15px;
-    flex-direction: column;
-    padding: 15px;
-  }
-  
-  .game-section img {
-    float: none;
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
-    border: 3px solid white;
-    border-radius: 10px;
-  }
-  
-  .game-section {
-    font-size: 15px;
-    margin: 15px;
-    padding: 20px;
-    border-radius: 15px;
-  }
-  
-  footer {
-    padding: 20px 15px;
-    font-size: 16px;
-    margin-top: 30px;
-  }
-  
-  /* Navigation improvements */
-  nav a {
-    min-height: 44px;
-    padding: 0 15px;
-  }
-  
-  .logo-icon h3 {
-    font-size: 16px;
-  }
-}
-
-/* Small Mobile Styles (480px and below) */
-@media (max-width: 480px) {
-  html {
-    font-size: 13px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin-top: 20px;
-  }
-  
-  header p {
-    width: 95%;
-    margin: 10px auto;
-  }
-  
-  h2 {
-    font-size: 20px;
-    margin: 20px 15px 0 15px;
-  }
-  
-  .game-title {
-    font-size: 18px;
-    margin: 10px 15px;
-  }
-  
-  .game-section {
-    margin: 10px;
-    padding: 15px;
-  }
-  
-  .game-section > p:first-child {
-    line-height: 30px;
-  }
-  
-  ol {
-    gap: 10px;
-    padding: 10px;
-  }
-  
-  ol li a {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-  
-  footer {
-    padding: 15px 10px;
-    font-size: 14px;
-  }
-  
-  .back-to-top {
-    width: 40px;
-    height: 40px;
-    right: 15px;
-    bottom: 15px;
-    font-size: 18px;
-  }
-}
-
-/* Navigation Mobile Styles */
-@media (max-width: 610px) {
   nav {
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
   }
- h1{
-  font-size: 22px;
-  margin-top: 30px;
-  margin-left: 20px;
 
- }
- h2{
-  font-size: 22px;
-  margin-left: 20px;
-  text-align: center;
- }
- 
-  .game-title{
-    font-size: 20px;
-    margin-left: 20px;
-    text-align: center;
- }
   .links-container {
-    flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    z-index: 10;
-    width: 300px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Navigation Selectors */
+  nav {
+    height: 60px;
     background-color: var(--color-1);
-    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
-    transition: 0.3s ease;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   nav a {
-    box-sizing: border-box;
-    height: auto;
-    width: 100%;
-    padding: 15px 30px;
-    justify-content: flex-start;
-    min-height: 50px;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
+  nav .underline-link:hover {
+    background-color: var(--accent-color);
+    transition: 0.7s ease-in-out;
+  }
+
+  .home-link {
+    margin-right: auto;
+  }
+
+  .logo-icon:hover {
+    text-decoration: none;
+    background-color: var(--color-1);
+  }
+
+  nav svg {
+    fill: var(--text-color);
+  }
+
+  #sidebar-active {
+    display: none;
   }
 
   .open-sidebar-button,
   .close-sidebar-button {
-    display: block;
-    padding: 20px;
+    display: none;
   }
 
-  #sidebar-active:checked ~ .links-container {
-    right: 0;
-  }
-
-  .logo-icon img {
-    width: 100px;
-    height: 100%;
-  }
-
-  #sidebar-active:checked ~ #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9;
-  }
-  
-  /* Logo text adjustment */
-  .logo-icon h3 {
+  /* Responsive CSS Fixes */
+  html {
     font-size: 16px;
-    margin-left: 8px;
   }
-}
 
-/* Image responsiveness */
-.game-section img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
+  /* Tablet Styles (1024px and below) */
+  @media (max-width: 1024px) {
+    .game-section {
+      margin: 20px 30px;
+    }
 
-/* Ensure proper touch targets */
-nav a, 
-ol li a, 
-.back-to-top {
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.back-to-top {
-  position: fixed;
-  right: 20px;
-  bottom: 24px;
-  width: 44px;
-  height: 44px;
-  border-radius: 15px;
-  background: var(--color-1);
-  color: var(--text-color);
-  text-decoration: none;
-  display: grid;
-  place-items: center;
-  font-size: 20px;
-  z-index: 1500;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  transition: transform 0.18s ease, background 0.18s ease;
-}
+    h2,
+    .game-title {
+      margin-left: 30px;
+    }
 
-.back-to-top:hover,
-.back-to-top:focus {
-  transform: translateY(-4px);
-  background: var(--accent-color);
-  color: #fff;
-  outline: 2px solid rgba(0, 0, 0, 0.08);
-  outline-offset: 2px;
-}
+    .game-section img {
+      max-width: 40%;
+      height: 250px;
+    }
+  }
+
+  /* Mobile Styles (768px and below) */
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-top: 30px;
+    }
+
+    header p {
+      font-size: 13px;
+      width: 90%;
+      margin: 15px auto;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 30px 20px 0 20px;
+      text-align: center;
+    }
+
+    .game-title {
+      font-size: 22px;
+      margin: 15px 20px;
+      text-align: center;
+    }
+
+    ol {
+      gap: 15px;
+      flex-direction: column;
+      padding: 15px;
+    }
+
+    .game-section img {
+      float: none;
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      height: auto;
+      border: 3px solid white;
+      border-radius: 10px;
+    }
+
+    .game-section {
+      font-size: 15px;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    footer {
+      padding: 20px 15px;
+      font-size: 16px;
+      margin-top: 30px;
+    }
+
+    /* Navigation improvements */
+    nav a {
+      min-height: 44px;
+      padding: 0 15px;
+    }
+
+    .logo-icon h3 {
+      font-size: 16px;
+    }
+  }
+
+  /* Small Mobile Styles (480px and below) */
+  @media (max-width: 480px) {
+    html {
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    header p {
+      width: 95%;
+      margin: 10px auto;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 20px 15px 0 15px;
+    }
+
+    .game-title {
+      font-size: 18px;
+      margin: 10px 15px;
+    }
+
+    .game-section {
+      margin: 10px;
+      padding: 15px;
+    }
+
+    .game-section>p:first-child {
+      line-height: 30px;
+    }
+
+    ol {
+      gap: 10px;
+      padding: 10px;
+    }
+
+    ol li a {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+
+    footer {
+      padding: 15px 10px;
+      font-size: 14px;
+    }
+
+    .back-to-top {
+      width: 40px;
+      height: 40px;
+      right: 15px;
+      bottom: 15px;
+      font-size: 18px;
+    }
+  }
+
+  /* Navigation Mobile Styles */
+  @media (max-width: 610px) {
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-top: 30px;
+      margin-left: 20px;
+
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-left: 20px;
+      text-align: center;
+    }
+
+    .game-title {
+      font-size: 20px;
+      margin-left: 20px;
+      text-align: center;
+    }
+
+    .links-container {
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 10;
+      width: 300px;
+      background-color: var(--color-1);
+      box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+      transition: 0.3s ease;
+    }
+
+    nav a {
+      box-sizing: border-box;
+      height: auto;
+      width: 100%;
+      padding: 15px 30px;
+      justify-content: flex-start;
+      min-height: 50px;
+    }
+
+    .open-sidebar-button,
+    .close-sidebar-button {
+      display: block;
+      padding: 20px;
+    }
+
+    #sidebar-active:checked~.links-container {
+      right: 0;
+    }
+
+    .logo-icon img {
+      width: 100px;
+      height: 100%;
+    }
+
+    #sidebar-active:checked~#overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+    }
+
+    /* Logo text adjustment */
+    .logo-icon h3 {
+      font-size: 16px;
+      margin-left: 8px;
+    }
+  }
+
+  /* Image responsiveness */
+  .game-section img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Ensure proper touch targets */
+  nav a,
+  ol li a,
+  .back-to-top {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+    background: var(--color-1);
+    color: var(--text-color);
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    z-index: 1500;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.18s ease, background 0.18s ease;
+  }
+
+  .back-to-top:hover,
+  .back-to-top:focus {
+    transform: translateY(-4px);
+    background: var(--accent-color);
+    color: #fff;
+    outline: 2px solid rgba(0, 0, 0, 0.08);
+    outline-offset: 2px;
+  }
 </style>
 
 <body id="top">
   <!-- 🌐 Navbar -->
 
-      <nav>
-        <input type="checkbox" id="sidebar-active" />
-        <label for="sidebar-active" class="open-sidebar-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#e3e3e3"
-          >
-            <path
-              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
-            />
-          </svg>
-        </label>
-        <label for="sidebar-active" id="overlay"></label>
-        <div class="links-container">
-          <label for="sidebar-active" class="close-sidebar-button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-            fill="#e3e3e3"
-            >
-              <path
-                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-              />
-            </svg>
-          </label>
-          <a class="logo-icon" href="index.html">
-            <img
-              src="top10.jpg-removebg-preview.png"
-              alt="html.index"
-              width="70px"
-              height="70px"
-            />
-            <h3>INDIA</h3>
-          </a>
-          <a href="index.html" class="underline-link home-link">Home</a>
-          <a href="#" class="underline-link">About</a>
-          <a href="#" class="underline-link">Blog</a>
-          <a href="#" class="underline-link">Login</a>
-          <a href="#" class="underline-link">ContactUs</a>
-        </div>
-      </nav>
+  <nav>
+    <input type="checkbox" id="sidebar-active" />
+    <label for="sidebar-active" class="open-sidebar-button">
+      <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3">
+        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+      </svg>
+    </label>
+    <label for="sidebar-active" id="overlay"></label>
+    <div class="links-container">
+      <label for="sidebar-active" class="close-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#e3e3e3">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+        </svg>
+      </label>
+      <a class="logo-icon" href="index.html">
+        <img src="top10.jpg-removebg-preview.png" alt="html.index" width="70px" height="70px" />
+        <h3>INDIA</h3>
+      </a>
+      <a href="index.html" class="underline-link home-link">Home</a>
+      <a href="#" class="underline-link">About</a>
+      <a href="#" class="underline-link">Blog</a>
+      <a href="#" class="underline-link">Login</a>
+      <a href="#" class="underline-link">ContactUs</a>
+    </div>
+  </nav>
 
 
   <!-- 🏆 Header -->
@@ -588,10 +580,7 @@ ol li a,
 
     <!-- 🧱 Minecraft Section -->
     <section id="Minecraft">
-      <div     height="32px"
-              viewBox="0 -960 960 960"
-              width="32px"
-            class="game-title">1. Minecraft</div>
+      <div height="32px" viewBox="0 -960 960 960" width="32px" class="game-title">1. Minecraft</div>
       <div class="game-section">
         <img src="https://wallpapers.com/images/featured/minecraft-landscape-8h44acokruk5k6fh.jpg" alt="Minecraft" />
 
@@ -1367,19 +1356,14 @@ ol li a,
         while maintaining artistic integrity.
       </p>
     </div>
-  </section> 
+  </section>
   </main>
   <footer>
     <p>© 2025 Top 10 Games world | Powered by Gaming Passion</p>
     <p>All rights reserved to respective game developers and publishers</p>
     <p>created by Ojas Mishra</p>
   </footer>
-  <a
-      href="#top"
-      class="back-to-top"
-      aria-label="Back to top"
-      title="Back to top"
-      >↑</a
-    >
+  <a href="#top" class="back-to-top" aria-label="Back to top" title="Back to top">↑</a>
 </body>
+
 </html>
