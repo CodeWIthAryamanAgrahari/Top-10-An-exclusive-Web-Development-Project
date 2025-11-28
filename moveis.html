@@ -281,6 +281,44 @@ p{
   font-size: 22px;
   color: #cacdd1;
 }
+.op h2{
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.op span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  color: #cacdd1;
+}
+.moveis{
+  border-radius: 20px;
+  padding: 20px;
+  background: radial-gradient(
+    circle at top,
+    #2b2eb5 25%,
+    #943cc4 60%,
+    #050918 100%
+  );
+  width: 1400px;
+  margin-left: 60px;
+  margin-top: 30px;
+  position: absolute;
+}
+.moveis ::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--accent-purple) 50%, transparent 100%);
+        transform: translateX(-50%);
+}
 </style>
 </head>
 <body>
@@ -358,5 +396,12 @@ p{
           Welcome to the ultimate debate, the cinematic summit, the list to end all lists. Attempting to rank the ten greatest films of all time is a fool's errand—a beautiful, passionate, and utterly subjective quest. Yet, here we are. This is our curated collection of masterpieces that have not only defined cinema but have transcended it, leaving an indelible mark on our culture and our hearts. These are the stories that changed the way we see the world, one frame at a time.The moveis which are talked about in this website are shortlisted below:-
         </p>
       </header>
+      <div class="op">
+        <h2>The Greatest Films Ever Made</h2>
+        <span>Ranked by critical acclaim, cultural impact, and timeless storytelling</span>
+      </div>
+      <div class="moveis">
+       <h2>The Shawshank Redemption</h2>
+      </div>
 </body>
 </html>
