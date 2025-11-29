@@ -1,290 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>top 10 moveis of the World</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <style>
-    @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
-:root {
-  --color-1: #07092a;
-  --accent-color: #e74c3c;
-  --text-color: #ecf0f1;
-  --background-color: #0f1432;
-  --font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --primary-color: #c277fb;
-  --secondary-color: #27ae60;
-  --hover-color: #8e44ad;
-  --btn-color: #2980b9;
-  --section-color: #1a1625;
-  --sec-icon-fill: #27ae60;
-  --article-color: #412859;
-}
+      :root {
+        --color-1: #07092a;
+        --accent-color: #e74c3c;
+        --text-color: #ecf0f1;
+        --background-color: #0f1432;
+        --font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana,
+          sans-serif;
+        --primary-color: #c277fb;
+        --secondary-color: #27ae60;
+        --hover-color: #8e44ad;
+        --btn-color: #2980b9;
+        --section-color: #1a1625;
+        --sec-icon-fill: #27ae60;
+        --article-color: #412859;
+      }
 
-/* Light theme overrides */
-#theme-switch:checked ~ .page {
-  --color-1: #ffffff;
-  --text-color: #1f2430;
-  --background-color: #f1f4f8;
-  --secondary-color: #1a7f37;
-  --hover-color: #6f42c1;
-}
+      /* Light theme overrides */
+      #theme-switch:checked ~ .page {
+        --color-1: #ffffff;
+        --text-color: #1f2430;
+        --background-color: #f1f4f8;
+        --secondary-color: #1a7f37;
+        --hover-color: #6f42c1;
+      }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
 
-html {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
+      html {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-family);
-  background: radial-gradient(
-    circle at top,
-    #232f78 0%,
-    #2635a8 55%,
-    #1b34b1 100%
-  );
-  color: var(--text-color);
-  overflow-x: hidden;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-family);
+        background: radial-gradient(
+          circle at top,
+          #232f78 0%,
+          #2635a8 55%,
+          #1b34b1 100%
+        );
+        color: var(--text-color);
+        overflow-x: hidden;
+        transition: background-color 0.4s ease, color 0.4s ease;
+      }
 
-.page {
-  min-height: 100vh;
-  
-  background: radial-gradient(
-    circle at top,
-    #2b2eb5 25%,
-    #943cc4 60%,
-    #050918 100%
-  );
-  color: var(--text-color);
-  transition: background-color 0.4s ease, color 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  
-}
+      .page {
+        min-height: 100vh;
 
-.theme-switch-input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
+        background: radial-gradient(
+          circle at top,
+          #2b2eb5 25%,
+          #943cc4 60%,
+          #050918 100%
+        );
+        color: var(--text-color);
+        transition: background-color 0.4s ease, color 0.4s ease;
+        display: flex;
+        flex-direction: column;
+      }
 
-#theme-switch:focus-visible ~ .page nav .theme-toggle {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 4px;
-  background-color: #342645;
-}
+      .theme-switch-input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+      #theme-switch:focus-visible ~ .page nav .theme-toggle {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 4px;
+        background-color: #342645;
+      }
 
-a {
-  color: white;
-  transition: 0.6s ease;
-  text-decoration: none;
-}
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
 
-.fa {
-  color: #e0aaff;
-}
+      a {
+        color: white;
+        transition: 0.6s ease;
+        text-decoration: none;
+      }
 
-.backdrop-filter {
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.08) 1px,
-    transparent 0
-  );
-  background-size: 120px 120px;
-  opacity: 0.2;
-  pointer-events: none;
-  z-index: -1;
-}
+      .fa {
+        color: #e0aaff;
+      }
 
-/* Navigation Selectors */
-/* The CSS code snippet provided is defining the styling for a navigation bar and sidebar for a
+      .backdrop-filter {
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.08) 1px,
+          transparent 0
+        );
+        background-size: 120px 120px;
+        opacity: 0.2;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      /* Navigation Selectors */
+      /* The CSS code snippet provided is defining the styling for a navigation bar and sidebar for a
 website. Here is a breakdown of what the code is doing: */
-nav {
-  height: 60px;
-  background-color: var(--color-1);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: sticky;
-  left: 0;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  gap: 8px;
-  transition: background-color 0.4s ease, box-shadow 0.3s ease,
-    backdrop-filter 0.3s ease;
-  backdrop-filter: saturate(140%) blur(6px);
-  box-shadow: 0 2px 10px var(--color-1);
-  margin-bottom: 3rem;
-}
+      nav {
+        height: 60px;
+        background-color: var(--color-1);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        gap: 8px;
+        transition: background-color 0.4s ease, box-shadow 0.3s ease,
+          backdrop-filter 0.3s ease;
+        -webkit-backdrop-filter: blur(6px) saturate(140%);
+        backdrop-filter: saturate(140%) blur(6px);
+        box-shadow: 0 2px 10px var(--color-1);
+        margin-bottom: 3rem;
+      }
 
-.links-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: var(--color-1);
-}
+      .links-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: var(--color-1);
+      }
 
-nav a {
-  height: 100%;
-  padding: 0px 20px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--text-color);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: all 0.7s ease;
-  gap: 10px;
-}
+      nav a {
+        height: 100%;
+        padding: 0px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text-color);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.7s ease;
+        gap: 10px;
+      }
 
-nav .underline-link:hover {
-  background: radial-gradient(
-    circle at top,
-    #2b2eb5 25%,
-    #943cc4 60%,
-    #050918 100%
-  );
-  transform: scale(1.05);
-  color: var(--text-color);
-  transition: all 0.7s ease;
-  gap: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px #35374b;
-  text-decoration: none;
-  overflow: hidden;
-}
+      nav .underline-link:hover {
+        background: radial-gradient(
+          circle at top,
+          #2b2eb5 25%,
+          #943cc4 60%,
+          #050918 100%
+        );
+        transform: scale(1.05);
+        color: var(--text-color);
+        transition: all 0.7s ease;
+        gap: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px #35374b;
+        text-decoration: none;
+        overflow: hidden;
+      }
 
-/* Light mode: make nav link text white on hover for contrast */
-#theme-switch:checked ~ .page nav .underline-link:hover {
-  color: #ffffff;
-}
+      /* Light mode: make nav link text white on hover for contrast */
+      #theme-switch:checked ~ .page nav .underline-link:hover {
+        color: #ffffff;
+      }
 
-.home-link {
-  margin-right: auto;
-}
+      .home-link {
+        margin-right: auto;
+      }
 
-.logo-icon:hover {
-  text-decoration: none;
-  background-color: var(--color-1);
-}
+      .logo-icon:hover {
+        text-decoration: none;
+        background-color: var(--color-1);
+      }
 
-.logo-icon {
-  gap: 0;
-}
+      .logo-icon {
+        gap: 0;
+      }
 
-nav svg {
-  fill: var(--text-color);
-}
+      nav svg {
+        fill: var(--text-color);
+      }
 
-/* Theme toggle button */
-.theme-toggle {
-  margin-right: 10px;
-  background-color: #111323;
-  border: 1px solid #494c5f;
-  color: var(--text-color);
-  padding: 8px 12px;
-  border-radius: 999px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.25s ease, border-color 0.25s ease,
-    transform 0.2s ease, color 0.25s ease;
-}
+      /* Theme toggle button */
+      .theme-toggle {
+        margin-right: 10px;
+        background-color: #111323;
+        border: 1px solid #494c5f;
+        color: var(--text-color);
+        padding: 8px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.25s ease, border-color 0.25s ease,
+          transform 0.2s ease, color 0.25s ease;
+      }
 
-.theme-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.55);
-  transform: translateY(-1px);
-}
+      .theme-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.55);
+        transform: translateY(-1px);
+      }
 
-.theme-toggle i {
-  pointer-events: none;
-  font-size: 16px;
-}
+      .theme-toggle i {
+        pointer-events: none;
+        font-size: 16px;
+      }
 
-.theme-toggle .icon-light {
-  display: none;
-}
+      .theme-toggle .icon-light {
+        display: none;
+      }
 
-.open-sidebar-button, .close-sidebar-button{
-  display: none;
-}
+      .open-sidebar-button,
+      .close-sidebar-button {
+        display: none;
+      }
 
-#theme-switch:checked ~ .page nav .theme-toggle {
-  background-color: rgba(31, 36, 48, 0.08);
-  border-color: rgba(31, 36, 48, 0.24);
-}
+      #theme-switch:checked ~ .page nav .theme-toggle {
+        background-color: rgba(31, 36, 48, 0.08);
+        border-color: rgba(31, 36, 48, 0.24);
+      }
 
-#theme-switch:checked ~ .page nav .theme-toggle:hover {
-  background-color: rgba(31, 36, 48, 0.18);
-}
+      #theme-switch:checked ~ .page nav .theme-toggle:hover {
+        background-color: rgba(31, 36, 48, 0.18);
+      }
 
-#theme-switch:checked ~ .page nav .theme-toggle .icon-light {
-  display: inline-block;
-}
+      #theme-switch:checked ~ .page nav .theme-toggle .icon-light {
+        display: inline-block;
+      }
 
-#theme-switch:checked ~ .page nav .theme-toggle .icon-dark {
-  display: none;
-}
+      #theme-switch:checked ~ .page nav .theme-toggle .icon-dark {
+        display: none;
+      }
 
-#sidebar-active {
-  display: none;
-}
-h1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 60px;
-  margin-top: 20px;             
-}
-p{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 30px;
-  margin-top: 30px;
-  font-size: 22px;
-  color: #cacdd1;
-}
-</style>
-</head>
-<body>
-   <input
+      #sidebar-active {
+        display: none;
+      }
+      h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        margin-top: 20px;
+      }
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: 22px;
+        color: #cacdd1;
+      }
+    </style>
+  </head>
+  <body>
+    <input
       type="checkbox"
       id="theme-switch"
       class="theme-switch-input"
@@ -353,10 +355,21 @@ p{
         </label>
       </nav>
       <header>
-        <h1>Top 10 Movies <br/> of All Time!!</h1>
+        <h1>
+          Top 10 Movies <br />
+          of All Time!!
+        </h1>
         <p>
-          Welcome to the ultimate debate, the cinematic summit, the list to end all lists. Attempting to rank the ten greatest films of all time is a fool's errand—a beautiful, passionate, and utterly subjective quest. Yet, here we are. This is our curated collection of masterpieces that have not only defined cinema but have transcended it, leaving an indelible mark on our culture and our hearts. These are the stories that changed the way we see the world, one frame at a time.The moveis which are talked about in this website are shortlisted below:-
+          Welcome to the ultimate debate, the cinematic summit, the list to end
+          all lists. Attempting to rank the ten greatest films of all time is a
+          fool's errand—a beautiful, passionate, and utterly subjective quest.
+          Yet, here we are. This is our curated collection of masterpieces that
+          have not only defined cinema but have transcended it, leaving an
+          indelible mark on our culture and our hearts. These are the stories
+          that changed the way we see the world, one frame at a time.The moveis
+          which are talked about in this website are shortlisted below:-
         </p>
       </header>
-</body>
+    </div>
+  </body>
 </html>

@@ -191,8 +191,8 @@ h1 {
     #1691c5,
     #133050
   );
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
@@ -296,8 +296,8 @@ footer h3 {
     #1691c5,
     #133050
   );
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
