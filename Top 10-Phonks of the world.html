@@ -19,7 +19,7 @@
     />
     <div class="page">
       <nav>
-        <input type="checkbox" id="sidebar-active" />
+        <input title="sidebar-active" type="checkbox" id="sidebar-active" />
         <label for="sidebar-active" class="open-sidebar-button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,17 +90,18 @@
             trap and hip-hop culture.
           </p>
           <div class="article-btns">
-            <button class="btn article-btn1">
-              <a href="#sections">Explore the Playlist</a>
-            </button>
-            <button class="btn article-btn2">
-              <a
-                target="_blank"
-                class="article-btn2-link"
-                href="https://open.spotify.com"
-                >Listen on Spotify</a
-              >
-            </button>
+            <a class="btn article-btn1" href="#sections"
+              >Explore the Playlist</a
+            >
+
+            <a
+              class="btn article-btn2"
+              target="_blank"
+              rel="noopener"
+              class="article-btn2-link"
+              href="https://open.spotify.com"
+              >Listen on Spotify</a
+            >
           </div>
         </article>
         <div class="cards">
@@ -129,7 +130,7 @@
             </p>
           </div>
         </div>
-        <div class="sections">
+        <div class="sections" id="sections">
           <section>
             <span class="section-span">01</span>
             <h2 class="section-h2">Murder In My Mind - Kordhell</h2>

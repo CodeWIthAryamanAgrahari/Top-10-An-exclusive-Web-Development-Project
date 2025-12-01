@@ -103,6 +103,7 @@ nav {
   gap: 8px;
   transition: background-color 0.4s ease, box-shadow 0.3s ease,
     backdrop-filter 0.3s ease;
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
   backdrop-filter: saturate(140%) blur(6px);
   box-shadow: 0 2px 10px var(--color-1);
 }
@@ -247,6 +248,7 @@ nav svg {
     background-color: var(--color-1);
     box-shadow: -5px 0 5px rgba(157, 78, 221, 0.25);
     transition: 1s ease;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     height: calc(100vh - 60px);
   }
@@ -374,8 +376,8 @@ article::after {
 .article-h1 {
   font-size: 40px;
   background: linear-gradient(135deg, #c77dff, #9d4edd, #e0aaff);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -400,6 +402,9 @@ article::after {
   border-radius: 50px;
   font-size: 15px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   padding: 15px 20px;
 }
@@ -408,6 +413,9 @@ article::after {
   box-shadow: 0px 14px 22px 0px rgba(199, 125, 255, 0.4);
   transition: all 0.2s ease;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .article-btn1:hover {
@@ -419,6 +427,9 @@ article::after {
   background-color: #2d1b3d;
   border: 1px solid #7a4c9e;
   transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .article-btn2:hover {
@@ -659,8 +670,8 @@ footer h3 {
     #e0aaff,
     #7b2cbf
   );
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }

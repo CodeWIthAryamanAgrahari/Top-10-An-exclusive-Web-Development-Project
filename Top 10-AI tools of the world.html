@@ -20,6 +20,7 @@
     />
   </head>
   <body id="top">
+<<<<<<< HEAD
     <div class="backdrop-filter"></div>
     <input
       type="checkbox"
@@ -83,6 +84,154 @@
             <a href="#" class="underline-link">
               <i class="fas fa-envelope"></i>Contact Us
             </a>
+=======
+    <!-- The above code is creating a navigation menu with a sidebar that can be toggled open and closed
+    using a checkbox input. When the checkbox is checked, the sidebar is displayed with links to
+    different sections like Home, About, Blog, Login, and Contact Us. The sidebar also includes a
+    logo image and a close button to hide the sidebar. The SVG icons are used for the open and close
+    buttons in the sidebar. -->
+    <nav>
+      <input title="sidebar-active" type="checkbox" id="sidebar-active" />
+      <label for="sidebar-active" class="open-sidebar-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="32px"
+          viewBox="0 -960 960 960"
+          width="32px"
+          fill="#e3e3e3"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          />
+        </svg>
+      </label>
+      <label for="sidebar-active" id="overlay"></label>
+      <div class="links-container">
+        <label for="sidebar-active" class="close-sidebar-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#e3e3e3"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </label>
+        <a class="logo-icon" href="index.html">
+          <img
+            src="Images/Logo.png"
+            alt="Logo Image"
+            width="70px"
+            height="70px"
+          />
+          <h3>INDIA</h3>
+        </a>
+        <a href="index.html" class="underline-link home-link">Home</a>
+        <a href="#" class="underline-link">About</a>
+        <a href="#" class="underline-link">Blog</a>
+        <a href="#" class="underline-link">Login</a>
+        <a href="#" class="underline-link">Contact Us</a>
+      </div>
+    </nav>
+    <main>
+      <span class="top-10-container"><h1>Top 10</h1></span>
+      <h2 id="top-h2">AI Tools of the World</h2>
+      <div class="wrapper2">
+        <!-- The above code is an HTML snippet that represents an article discussing the importance and impact of
+AI tools in various industries. The article highlights how AI tools are being used to enhance
+productivity, streamline workflows, and drive innovation across different domains. It emphasizes the
+diversity and versatility of AI tools available today, catering to different needs and use cases. -->
+        <article>
+          <p>
+            Artificial Intelligence (AI) has become a pivotal force in shaping
+            the future of technology and innovation. With its ability to analyze
+            vast amounts of data, recognize patterns, and make predictions, AI
+            has revolutionized various industries, from healthcare and finance
+            to marketing and customer service. The rise of AI tools has
+            empowered businesses and individuals alike to harness the power of
+            machine learning, natural language processing, and computer vision,
+            among other capabilities.
+          </p>
+          <p>
+            As AI continues to evolve, the landscape of tools and technologies
+            is rapidly expanding, offering new opportunities for innovation and
+            growth. Staying informed about the latest AI tools is essential for
+            anyone looking to leverage artificial intelligence in their work or
+            projects.
+          </p>
+          <p>
+            In today's rapidly evolving technological landscape, artificial
+            intelligence (AI) has emerged as a transformative force,
+            revolutionizing industries and reshaping the way we interact with
+            technology. From healthcare to finance, education to entertainment,
+            AI tools are becoming increasingly integral to our daily lives. This
+            article explores the top 10 AI tools of the world that are leading
+            the charge in innovation and driving significant advancements across
+            various sectors.
+          </p>
+          <p>
+            These AI tools encompass a wide range of applications, including
+            machine learning frameworks, natural language processing platforms,
+            computer vision systems, and more. Each tool offers unique features
+            and capabilities that cater to different needs, making them
+            invaluable assets for businesses, researchers, and developers alike.
+            As we delve into the top 10 AI tools, we will examine their
+            functionalities, advantages, and real-world applications,
+            highlighting how they are shaping the future of technology and
+            society.
+          </p>
+        </article>
+        <!-- The above code is a collection of HTML sections describing various artificial intelligence (AI)
+technologies and platforms. Each section provides information about a specific AI tool, its
+features, advantages, and applications. The content covers popular AI frameworks such as TensorFlow,
+PyTorch, IBM Watson, Microsoft Azure AI, Google Cloud AI, OpenAI GPT-5, H2O.ai, RapidMiner,
+DataRobot, and Keras. Each section includes details about the respective AI technology, its key
+components, advantages, ecosystem, and industry applications. -->
+        <section>
+          <h2 class="AI-name">1. TensorFlow</h2>
+          <div class="paragraphs">
+            <p>
+              TensorFlow is an open-source end-to-end platform for machine
+              learning and deep learning, originally developed by the Google
+              Brain team and released in 2015. It provides a comprehensive
+              ecosystem of tools, libraries, and community resources to help
+              developers and data scientists build, train, and deploy AI models
+              across various platforms. The framework is named after its core
+              components: tensors (multidimensional data arrays) that "flow"
+              through computational graphs of mathematical operations. While its
+              core operations are performed by high-performance C++ binaries, it
+              offers front-end APIs in multiple languages, with Python being the
+              most popular and fully supported.
+            </p>
+            <p>
+              A key advantage of TensorFlow is its robust and flexible
+              architecture, designed for high-performance and scalable
+              deployment. It allows for training models on various hardware,
+              including CPUs, GPUs, and Google's custom Tensor Processing Units
+              (TPUs). The platform includes a high-level API, Keras, which
+              simplifies model building with user-friendly, modular interfaces
+              and enables easy prototyping with eager execution. The ecosystem
+              also features specialized tools like TensorBoard for visualization
+              and debugging, TensorFlow Lite for deployment on mobile and
+              embedded devices, and TensorFlow.js for web browsers, providing an
+              end-to-end solution from research to production.
+            </p>
+            <p>
+              TensorFlow is widely used across various industries for real-world
+              applications such as image recognition, natural language
+              processing (NLP), video detection, and recommendation systems.
+              Major companies like Twitter, Airbnb, and Coca-Cola have
+              implemented TensorFlow for tasks like tweet prioritization, fraud
+              detection, and automated text recognition. Its ability to handle
+              complex, data-intensive neural networks and streamline the entire
+              machine learning workflow makes it a vital tool for developing
+              advanced AI solutions and automating processes across information
+              technology, healthcare, and e-commerce.
+            </p>
+>>>>>>> 9cbce45937590153138ec2630659acc164cabc99
           </div>
           <label for="theme-switch" class="theme-toggle">
             <span class="sr-only">Switch theme</span>

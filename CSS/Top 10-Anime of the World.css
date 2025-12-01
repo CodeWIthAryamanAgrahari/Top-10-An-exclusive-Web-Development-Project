@@ -123,6 +123,7 @@ nav {
   gap: 8px;
   transition: background-color 0.4s ease, box-shadow 0.3s ease,
     backdrop-filter 0.3s ease;
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
   backdrop-filter: saturate(140%) blur(6px);
   box-shadow: 0 2px 10px var(--color-1);
   margin-bottom: 3rem;
@@ -268,6 +269,7 @@ nav svg {
     background-color: var(--color-1);
     box-shadow: -5px 0 5px #080917ca;
     transition: 1s ease;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     height: calc(100vh - 60px);
   }

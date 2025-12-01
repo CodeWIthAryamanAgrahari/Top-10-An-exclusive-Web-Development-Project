@@ -2,759 +2,799 @@
 world. Here is a summary of what the code is doing: -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top 10 YouTubers of the World</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-dP4+7Yw8WwZp0V5nE7O1S4Jw0zJgIVDSwXBlao+LXgKm0kCzqJbfF/6/Tf2gzrjM6BfO5nXGuk7+g1dZ5yY1xA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <!-- The above code is defining the styling for a website layout, including a navigation bar, sidebar,
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 10 YouTubers of the World</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-dP4+7Yw8WwZp0V5nE7O1S4Jw0zJgIVDSwXBlao+LXgKm0kCzqJbfF/6/Tf2gzrjM6BfO5nXGuk7+g1dZ5yY1xA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- The above code is defining the styling for a website layout, including a navigation bar, sidebar,
   header, content sections, footer, and a back-to-top button. It also includes a theme switch
   functionality to toggle between light and dark modes. -->
-  <style>
-    :root {
-      --bg: #08090b;
-      --card: #11131a;
-      --text: #f4f6fb;
-      --muted: #9aa2b1;
-      --accent: #ff585d;
-      --accent-2: #40c9ff;
-      --border: rgba(255, 255, 255, 0.12);
-      --primary-color: #ff585d;
-      
-   
-    }
+    <style>
+      :root {
+        --bg: #08090b;
+        --card: #11131a;
+        --text: #f4f6fb;
+        --muted: #9aa2b1;
+        --accent: #ff585d;
+        --accent-2: #40c9ff;
+        --border: rgba(255, 255, 255, 0.12);
+        --primary-color: #ff585d;
+      }
 
-    #theme-switch:checked~.page {
-      --color-1: #ffffff;
-      --text-color: #1f2430;
-      --text:#1f2430;
-      --background-color: #f1f4f8;
-      --secondary-color: #1a7f37;
-      --hover-color: #6f42c1;
-      --card:var(--background-color);
-      --muted:var lightgrey;
-    }
+      #theme-switch:checked ~ .page {
+        --color-1: #ffffff;
+        --text-color: #1f2430;
+        --text: #1f2430;
+        --background-color: #f1f4f8;
+        --secondary-color: #1a7f37;
+        --hover-color: #6f42c1;
+        --card: var(--background-color);
+        --muted: var lightgrey;
+      }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #15192a, #050608 60%);
+        color: var(--text);
+      }
 
-    body {
-      margin: 0;
-      font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont,
-        'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top, #15192a, #050608 60%);
-      color: var(--text);
-    }
+      .page {
+        min-height: 100vh;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: background-color 0.4s ease, color 0.4s ease;
+        display: flex;
+        flex-direction: column;
+      }
 
+      .theme-switch-input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
 
-    .page {
-      min-height: 100vh;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      transition: background-color 0.4s ease, color 0.4s ease;
-      display: flex;
-      flex-direction: column;
-    }
+      #theme-switch:focus-visible ~ .page nav .theme-toggle {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 4px;
+        background-color: #342645;
+      }
 
-    .theme-switch-input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
 
-    #theme-switch:focus-visible~.page nav .theme-toggle {
-      outline: 2px solid var(--primary-color);
-      outline-offset: 4px;
-      background-color: #342645;
-    }
+      a {
+        color: white;
+        transition: 0.6s ease;
+        text-decoration: none;
+      }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
+      .fa {
+        color: #e0aaff;
+      }
 
-    a {
-      color: white;
-      transition: 0.6s ease;
-      text-decoration: none;
-    }
+      .backdrop-filter {
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.08) 1px,
+          transparent 0
+        );
+        background-size: 120px 120px;
+        opacity: 0.2;
+        pointer-events: none;
+        z-index: -1;
+      }
 
-    .fa {
-      color: #e0aaff;
-    }
-
-    .backdrop-filter {
-      position: fixed;
-      inset: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px,
-          transparent 0);
-      background-size: 120px 120px;
-      opacity: 0.2;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    /* Navigation Selectors */
-    /* The CSS code snippet provided is defining the styling for a navigation bar and sidebar for a
+      /* Navigation Selectors */
+      /* The CSS code snippet provided is defining the styling for a navigation bar and sidebar for a
 website. Here is a breakdown of what the code is doing: */
-    nav {
-      height: 60px;
-      background-color: var(--color-1);
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      position: sticky;
-      left: 0;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      gap: 8px;
-      transition: background-color 0.4s ease, box-shadow 0.3s ease,
-        backdrop-filter 0.3s ease;
-      backdrop-filter: saturate(140%) blur(6px);
-      box-shadow: 0 2px 10px var(--color-1);
-      margin-bottom: 3rem;
-    }
-
-    .links-container {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      background-color: var(--color-1);
-    }
-
-    nav a {
-      height: 100%;
-      padding: 0px 20px;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: var(--text-color);
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: all 0.7s ease;
-      gap: 10px;
-    }
-
-    nav .underline-link:hover {
-      background-color: #35374b;
-      transform: scale(1.05);
-      color: var(--text-color);
-      transition: all 0.7s ease;
-      gap: 10px;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px #35374b;
-      text-decoration: none;
-    }
-
-    /* Light mode: make nav link text white on hover for contrast */
-    #theme-switch:checked~.page nav .underline-link:hover {
-      color: #ffffff;
-    }
-
-    .home-link {
-      margin-right: auto;
-    }
-
-    .logo-icon:hover {
-      text-decoration: none;
-      background-color: var(--color-1);
-    }
-
-    .logo-icon {
-      gap: 0;
-    }
-
-    nav svg {
-      fill: var(--text-color);
-    }
-
-    /* Theme toggle button */
-    .theme-toggle {
-      margin-right: 10px;
-      background-color: #111323;
-      border: 1px solid #494c5f;
-      color: var(--text-color);
-      padding: 8px 12px;
-      border-radius: 999px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.25s ease, border-color 0.25s ease,
-        transform 0.2s ease, color 0.25s ease;
-    }
-
-    .theme-toggle:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.55);
-      transform: translateY(-1px);
-    }
-
-    .theme-toggle i {
-      pointer-events: none;
-      font-size: 16px;
-    }
-
-    .theme-toggle .icon-light {
-      display: none;
-    }
-
-    #theme-switch:checked~.page nav .theme-toggle {
-      background-color: rgba(31, 36, 48, 0.08);
-      border-color: rgba(31, 36, 48, 0.24);
-    }
-
-    #theme-switch:checked~.page nav .theme-toggle:hover {
-      background-color: rgba(31, 36, 48, 0.18);
-    }
-
-    #theme-switch:checked~.page nav .theme-toggle .icon-light {
-      display: inline-block;
-    }
-
-    #theme-switch:checked~.page nav .theme-toggle .icon-dark {
-      display: none;
-    }
-
-    #sidebar-active {
-      display: none;
-    }
-
-    .open-sidebar-button,
-    .close-sidebar-button {
-      display: none;
-    }
-
-    #overlay {
-      display: none;
-    }
-
-    header {
-      padding: 24px 24px;
-      /* Reduced padding */
-      max-width: 1100px;
-      margin: 0 auto;
-      color: var(--muted);
-    }
-
-    .youtube {
-      display: inline-flex;
-      color: var(--muted);
-      font-weight: 700;
-      align-items: center;
-      margin-top: 40px;
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .youtube::before {
-      content: '';
-      width: 32px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-    }
-
-    header h1 {
-      font-size: 45px;
-      margin: 0 0 16px;
-      font-weight: 900;
-      color: var(--text);
-      line-height: 1.1;
-    }
-
-    header p {
-      line-height: 1.6;
-      font-size: 18px;
-    }
-
-    .button {
-      display: flex;
-      justify-content: left;
-      gap: 22px;
-      margin-left: 360px;
-    }
-
-    .button button {
-      background: linear-gradient(120deg, var(--accent), var(--accent-2));
-      color: #050505;
-      color: var(--card);
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      box-shadow: 0 4px 6px linear-gradient(120deg, var(--accent), var(--accent-2));
-      font-family: 'Space Grotesk', system-ui, -apple-systel\m, BlinkMacSystemFont,
-        'Segoe UI', sans-serif;
-      ;
-
-    }
-
-    .button button a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .button button:hover {
-      background: linear-gradient(120deg, var(--accent-2), var(--accent));
-    }
-
-    ul {
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      gap: 30px;
-      margin-top: 60px;
-      margin-left: 360px;
-    }
-
-    ul li {
-      list-style-type: none;
-      text-transform: capitalize;
-      font-size: 18px;
-      color: var(--muted);
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 8px 18px;
-      border-color: var(--accent);
-      cursor: pointer;
-      margin-bottom: 30px;
-    }
-
-    ul li:hover {
-      color: var(--accent);
-    }
-
-    .cofounder {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: left;
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 0 20px;
-    }
-
-    .none {
-      height: 600px;
-      width: 400px;
-
-    }
-
-    .content {
-      background: var(--card);
-      border-radius: 24px;
-      border: 2px solid black;
-      padding: 24px;
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .content::after {
-      content: attr(data-rank);
-      position: absolute;
-      top: 16px;
-      right: 22px;
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.04);
-
-    }
-
-    .great span {
-      display: block;
-    }
-
-    .ten {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(circle at 30% 20%, var(--accent), #1a1f2d);
-      color: var(--text);
-      font-size: 30px;
-      width: 64px;
-      height: 64px;
-      border-radius: 10px;
-      place-items: center;
-    }
-
-    .name {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .five {
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    .section-head {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      margin-bottom: 20px;
-      margin-left: 10px;
-    }
-
-    .six {
-      color: var(--muted);
-      margin-left: 0px;
-    }
-
-    .seven {
-      color: var(--muted);
-    }
-
-    .one {
-      color: var(--accent-2);
-    }
-
-    .two p {
-      color:var(--text);
-      font-size: 16px;
-    }
-
-    footer {
-      background-color: var(--bg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 40px 20px;
-      gap: 20px;
-      color: var(--text);
-      margin-top: 60px;
-      border-top: 1px solid var(--border);
-    }
-
-    footer h3 {
-      color: var(--text);
-      text-align: center;
-      font-size: 38px;
-      font-weight: bolder;
-      background: linear-gradient(to bottom, #7b2cbf, #c77dff, #9d4edd);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    footer ul {
-      display: flex;
-      gap: 20px;
-      font-size: 18px;
-      list-style: none;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      margin: 20px 0 ;
-      margin-left: 0 ;
-    }
-
-    footer ul li a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-weight: bold;
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    footer ul li a:hover {
-      color: var(--accent);
-    }
-
-    footer ul li a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background-color: var(--accent);
-      border-radius: 2px;
-      transition: width 0.3s ease;
-    }
-
-    footer ul li a:hover::after {
-      width: 55%;
-    }
-
-    footer .social-icons {
-      display: flex;
-      gap: 15px;
-      font-size: 24px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    footer .social-icons i {
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border: 2px solid var(--muted);
-      padding: 10px;
-      border-radius: 50%;
-      background: transparent;
-      color: var(--text);
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    footer .social-icons i:hover {
-      color: var(--text);
-      border: 2px solid var(--accent);
-      background-color: var(--accent);
-      transform: translateY(-3px);
-    }
-
-    footer .paragraph {
-      font-size: 16px;
-      max-width: 600px;
-      text-align: center;
-      color: white;
-      line-height: 1.6;
-    }
-
-
-
-    /* Back to top*/
-    .back-to-top {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      width: 44px;
-      height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #ff6b9d, #00d4ff);
-      color: #05060d;
-      text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      box-shadow: 0 6px 14px rgba(157, 78, 221, 0.3);
-      transition: transform 0.6s ease, box-shadow 0.2s ease, opacity 0.2s ease,
-        background-color 0.5s ease;
-      z-index: 1003;
-      font-size: 25px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .back-to-top:hover {
-      transform: translateY(-6px) scale(108%);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
-      background-color: var(--primary-color);
-    }
-
-    #theme-switch:checked~.page .back-to-top {
-      border-color: rgba(0, 0, 0, 0.18);
-    }
-    /* Dark borders for cards in light mode */
-#theme-switch:checked ~ .page .content {
-  border: 2px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* Optional: Add border to filter buttons too */
-#theme-switch:checked ~ .page ul li {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-  </style>
-</head>
-
-<body id="top">
-  <div class="backdrop-filter"></div>
-  <input type="checkbox" id="theme-switch" class="theme-switch-input" aria-label="Toggle light mode" />
-  <div class="page">
-    <nav>
-      <input type="checkbox" id="sidebar-active" />
-      <label for="sidebar-active" class="open-sidebar-button">
-        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3">
-          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-        </svg>
-      </label>
-      <label for="sidebar-active" id="overlay"></label>
-      <div class="links-container">
-        <label for="sidebar-active" class="close-sidebar-button">
-          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3">
+      nav {
+        height: 60px;
+        background-color: var(--color-1);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        gap: 8px;
+        transition: background-color 0.4s ease, box-shadow 0.3s ease,
+          backdrop-filter 0.3s ease;
+        -webkit-backdrop-filter: saturate(140%) blur(6px);
+        backdrop-filter: saturate(140%) blur(6px);
+        box-shadow: 0 2px 10px var(--color-1);
+        margin-bottom: 3rem;
+      }
+
+      .links-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: var(--color-1);
+      }
+
+      nav a {
+        height: 100%;
+        padding: 0px 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text-color);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.7s ease;
+        gap: 10px;
+      }
+
+      nav .underline-link:hover {
+        background-color: #35374b;
+        transform: scale(1.05);
+        color: var(--text-color);
+        transition: all 0.7s ease;
+        gap: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px #35374b;
+        text-decoration: none;
+      }
+
+      /* Light mode: make nav link text white on hover for contrast */
+      #theme-switch:checked ~ .page nav .underline-link:hover {
+        color: #ffffff;
+      }
+
+      .home-link {
+        margin-right: auto;
+      }
+
+      .logo-icon:hover {
+        text-decoration: none;
+        background-color: var(--color-1);
+      }
+
+      .logo-icon {
+        gap: 0;
+      }
+
+      nav svg {
+        fill: var(--text-color);
+      }
+
+      /* Theme toggle button */
+      .theme-toggle {
+        margin-right: 10px;
+        background-color: #111323;
+        border: 1px solid #494c5f;
+        color: var(--text-color);
+        padding: 8px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.25s ease, border-color 0.25s ease,
+          transform 0.2s ease, color 0.25s ease;
+      }
+
+      .theme-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.55);
+        transform: translateY(-1px);
+      }
+
+      .theme-toggle i {
+        pointer-events: none;
+        font-size: 16px;
+      }
+
+      .theme-toggle .icon-light {
+        display: none;
+      }
+
+      #theme-switch:checked ~ .page nav .theme-toggle {
+        background-color: rgba(31, 36, 48, 0.08);
+        border-color: rgba(31, 36, 48, 0.24);
+      }
+
+      #theme-switch:checked ~ .page nav .theme-toggle:hover {
+        background-color: rgba(31, 36, 48, 0.18);
+      }
+
+      #theme-switch:checked ~ .page nav .theme-toggle .icon-light {
+        display: inline-block;
+      }
+
+      #theme-switch:checked ~ .page nav .theme-toggle .icon-dark {
+        display: none;
+      }
+
+      #sidebar-active {
+        display: none;
+      }
+
+      .open-sidebar-button,
+      .close-sidebar-button {
+        display: none;
+      }
+
+      #overlay {
+        display: none;
+      }
+
+      header {
+        padding: 24px 24px;
+        /* Reduced padding */
+        max-width: 1100px;
+        margin: 0 auto;
+        color: var(--muted);
+      }
+
+      .youtube {
+        display: inline-flex;
+        color: var(--muted);
+        font-weight: 700;
+        align-items: center;
+        margin-top: 40px;
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .youtube::before {
+        content: "";
+        width: 32px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+      }
+
+      header h1 {
+        font-size: 45px;
+        margin: 0 0 16px;
+        font-weight: 900;
+        color: var(--text);
+        line-height: 1.1;
+      }
+
+      header p {
+        line-height: 1.6;
+        font-size: 18px;
+      }
+
+      .button {
+        display: flex;
+        justify-content: left;
+        gap: 22px;
+        margin-left: 360px;
+      }
+
+      .button a {
+        background: linear-gradient(120deg, var(--accent), var(--accent-2));
+        color: #050505;
+        color: var(--card);
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: 0 4px 6px
+          linear-gradient(120deg, var(--accent), var(--accent-2));
+        font-family: "Space Grotesk", system-ui, -apple-systel\m,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .button a:hover {
+        background: linear-gradient(120deg, var(--accent-2), var(--accent));
+      }
+
+      ul {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 30px;
+        margin-top: 60px;
+        margin-left: 360px;
+      }
+
+      ul li {
+        list-style-type: none;
+        text-transform: capitalize;
+        font-size: 18px;
+        color: var(--muted);
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        padding: 8px 18px;
+        border-color: var(--accent);
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      ul li:hover {
+        color: var(--accent);
+      }
+
+      .cofounder {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: left;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 20px;
+      }
+
+      .none {
+        height: 600px;
+        width: 400px;
+      }
+
+      .content {
+        background: var(--card);
+        border-radius: 24px;
+        border: 2px solid black;
+        padding: 24px;
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .content::after {
+        content: attr(data-rank);
+        position: absolute;
+        top: 16px;
+        right: 22px;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.04);
+      }
+
+      .great span {
+        display: block;
+      }
+
+      .ten {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at 30% 20%, var(--accent), #1a1f2d);
+        color: var(--text);
+        font-size: 30px;
+        width: 64px;
+        height: 64px;
+        border-radius: 10px;
+        place-items: center;
+      }
+
+      .name {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .five {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .section-head {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-left: 10px;
+      }
+
+      .six {
+        color: var(--muted);
+        margin-left: 0px;
+      }
+
+      .seven {
+        color: var(--muted);
+      }
+
+      .one {
+        color: var(--accent-2);
+      }
+
+      .two p {
+        color: var(--text);
+        font-size: 16px;
+      }
+
+      footer {
+        background-color: var(--bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 20px;
+        color: var(--text);
+        margin-top: 60px;
+        border-top: 1px solid var(--border);
+      }
+
+      footer h3 {
+        color: var(--text);
+        text-align: center;
+        font-size: 38px;
+        font-weight: bolder;
+        background: linear-gradient(to bottom, #7b2cbf, #c77dff, #9d4edd);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      footer ul {
+        display: flex;
+        gap: 20px;
+        font-size: 18px;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 20px 0;
+        margin-left: 0;
+      }
+
+      footer ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: bold;
+        position: relative;
+        padding-bottom: 2px;
+      }
+
+      footer ul li a:hover {
+        color: var(--accent);
+      }
+
+      footer ul li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+
+      footer ul li a:hover::after {
+        width: 55%;
+      }
+
+      footer .social-icons {
+        display: flex;
+        gap: 15px;
+        font-size: 24px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      footer .social-icons i {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid var(--muted);
+        padding: 10px;
+        border-radius: 50%;
+        background: transparent;
+        color: var(--text);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      footer .social-icons i:hover {
+        color: var(--text);
+        border: 2px solid var(--accent);
+        background-color: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      footer .paragraph {
+        font-size: 16px;
+        max-width: 600px;
+        text-align: center;
+        color: white;
+        line-height: 1.6;
+      }
+
+      /* Back to top*/
+      .back-to-top {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #ff6b9d, #00d4ff);
+        color: #05060d;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 6px 14px rgba(157, 78, 221, 0.3);
+        transition: transform 0.6s ease, box-shadow 0.2s ease, opacity 0.2s ease,
+          background-color 0.5s ease;
+        z-index: 1003;
+        font-size: 25px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-6px) scale(108%);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+        background-color: var(--primary-color);
+      }
+
+      #theme-switch:checked ~ .page .back-to-top {
+        border-color: rgba(0, 0, 0, 0.18);
+      }
+      /* Dark borders for cards in light mode */
+      #theme-switch:checked ~ .page .content {
+        border: 2px solid rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Optional: Add border to filter buttons too */
+      #theme-switch:checked ~ .page ul li {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+
+  <body id="top">
+    <div class="backdrop-filter"></div>
+    <input
+      type="checkbox"
+      id="theme-switch"
+      class="theme-switch-input"
+      aria-label="Toggle light mode"
+    />
+    <div class="page">
+      <nav>
+        <input type="checkbox" id="sidebar-active" />
+        <label for="sidebar-active" class="open-sidebar-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#e3e3e3"
+          >
             <path
-              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
           </svg>
         </label>
-        <a class="logo-icon" href="index.html">
-          <img src="Images/Logo.png" alt="Logo Image" width="80px" height="80px" />
-          <h3>INDIA</h3>
-        </a>
-        <a href="index.html" class="underline-link home-link">
-          <i class="fas fa-home"></i>Home
-        </a>
-        <a href="#" class="underline-link">
-          <i class="fas fa-info-circle"></i>About
-        </a>
-        <a href="#" class="underline-link">
-          <i class="fas fa-blog"></i>Blog
-        </a>
-        <a href="#" class="underline-link">
-          <i class="fas fa-sign-in-alt"></i>Login
-        </a>
-        <a href="#" class="underline-link">
-          <i class="fas fa-envelope"></i>Contact Us
-        </a>
+        <label for="sidebar-active" id="overlay"></label>
+        <div class="links-container">
+          <label for="sidebar-active" class="close-sidebar-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32px"
+              viewBox="0 -960 960 960"
+              width="32px"
+              fill="#e3e3e3"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </label>
+          <a class="logo-icon" href="index.html">
+            <img
+              src="Images/Logo.png"
+              alt="Logo Image"
+              width="80px"
+              height="80px"
+            />
+            <h3>INDIA</h3>
+          </a>
+          <a href="index.html" class="underline-link home-link">
+            <i class="fas fa-home"></i>Home
+          </a>
+          <a href="#" class="underline-link">
+            <i class="fas fa-info-circle"></i>About
+          </a>
+          <a href="#" class="underline-link">
+            <i class="fas fa-blog"></i>Blog
+          </a>
+          <a href="#" class="underline-link">
+            <i class="fas fa-sign-in-alt"></i>Login
+          </a>
+          <a href="#" class="underline-link">
+            <i class="fas fa-envelope"></i>Contact Us
+          </a>
+        </div>
+        <label for="theme-switch" class="theme-toggle">
+          <span class="sr-only">Switch theme</span>
+          <i class="fas fa-moon icon-dark" aria-hidden="true"></i>
+          <i class="fas fa-sun icon-light" aria-hidden="true"></i>
+        </label>
+      </nav>
+
+      <header>
+        <span class="youtube">2025 Power List</span>
+        <h1>The 10 Most Influential<br />YouTubers in the World</h1>
+        <p>
+          From entertainment juggernauts to educational pioneers, these creators
+          reach<br />
+          billions of viewers each month and redefine modern media. Explore
+          audience scale,<br />
+          signature formats, and why each channel remains at the top of the
+          creator economy.
+        </p>
+      </header>
+      <div class="button">
+        <a href="#">dive into rankings</a>
+        <a href="https://www.youtube.com/">See them on youtube</a>
       </div>
-      <label for="theme-switch" class="theme-toggle">
-        <span class="sr-only">Switch theme</span>
-        <i class="fas fa-moon icon-dark" aria-hidden="true"></i>
-        <i class="fas fa-sun icon-light" aria-hidden="true"></i>
-      </label>
-    </nav>
-
-
-
-    <header>
-      <span class="youtube">2025 Power List</span>
-      <h1>The 10 Most Influential<br>YouTubers in the World</h1>
-      <p>
-        From entertainment juggernauts to educational pioneers, these creators reach<br>
-        billions of viewers each month and redefine modern media. Explore audience scale,<br>
-        signature formats, and why each channel remains at the top of the creator economy.
-      </p>
-    </header>
-    <div class="button">
-      <button>dive into rankings</button>
-      <button><a href="https://www.youtube.com/">See them on youtube</a></button>
-    </div>
-    <ul>
-      <li>global</li>
-      <li>entertainment</li>
-      <li>education</li>
-      <li>gaming</li>
-      <li>short form</li>
-      <li>emerging market</li>
-    </ul>
-    <div class="cofounder">
-      <section class="none">
-        <article class="content">
-          <div class="great">
-            <div class="section-head">
-              <div class="ten">1</div>
-              <div class="name">
-                <span class="five">MrBeast</span>
-                <span class="six">Challenge and philanthropy</span>
-                <span class="seven">Subscribers</span>
-                <span class="one">290M+</span>
+      <ul>
+        <li>global</li>
+        <li>entertainment</li>
+        <li>education</li>
+        <li>gaming</li>
+        <li>short form</li>
+        <li>emerging market</li>
+      </ul>
+      <div class="cofounder">
+        <section class="none">
+          <article class="content">
+            <div class="great">
+              <div class="section-head">
+                <div class="ten">1</div>
+                <div class="name">
+                  <span class="five">MrBeast</span>
+                  <span class="six">Challenge and philanthropy</span>
+                  <span class="seven">Subscribers</span>
+                  <span class="one">452M+</span>
+                </div>
+              </div>
+              <p class="two">
+                MrBeast, born on May 7 1988 is an American YouTube channel
+                founded by Jimmy Donaldson. It ranks among the most-subscribed
+                channels worldwide, famous for its high-production viral
+                content. The channel specializes in expensive stunts and
+                large-scale philanthropic giveaways. It has expanded into
+                successful business ventures like MrBeast Burger.He also
+                introduces his own chocolates named as festables. The brand
+                represents a new era of digital entertainment. MrBeast continues
+                to shape online media through innovative content and also become
+                famous in all over the world in a younger age.
+              </p>
+            </div>
+          </article>
+        </section>
+        <section class="none">
+          <article class="content">
+            <div class="great">
+              <div class="section-head">
+                <div class="ten">2</div>
+                <div class="name">
+                  <span class="five">T-Series</span>
+                  <span class="six">Music Label</span>
+                  <span class="seven">Subscribers</span>
+                  <span class="one">308M+</span>
+                </div>
               </div>
             </div>
             <p class="two">
-              MrBeast, born on May 7 1988 is an American YouTube channel founded by Jimmy Donaldson. It ranks among the
-              most-subscribed channels worldwide, famous for its high-production viral content. The channel specializes
-              in
-              expensive stunts and large-scale philanthropic giveaways. It has expanded into successful business
-              ventures
-              like MrBeast Burger.He also introduces his own chocolates named as festables. The brand represents a new
-              era
-              of digital entertainment. MrBeast continues to shape online media through innovative content and also
-              become
-              famous in all over the world in a younger age.
+              T-Series, founded in 1983 by Gulshan Kumar, is an Indian music
+              label and film production company that has grown to become one of
+              the most-subscribed YouTube channels globally. Known for its vast
+              catalog of Bollywood soundtracks, music videos, and film trailers,
+              the company dominates the Indian music market and has expanded
+              into film production and distribution. Under the leadership of
+              Bhushan Kumar, T-Series gained international prominence through
+              its rapid growth on digital platforms, symbolizing the scale of
+              India's entertainment industry and its massive digital audience.
             </p>
-        </article>
-      </section>
-      <section class="none">
-        <article class="content">
-          <div class="great">
-            <div class="section-head">
-              <div class="ten">2</div>
-              <div class="name">
-                <span class="five">T-Series</span>
-                <span class="six">Music Label</span>
-                <span class="seven">Subscribers</span>
-                <span class="one">2262M+</span>
-              </div>
-            </div>
-          </div>
-          <p class="two">
-            T-Series, founded in 1983 by Gulshan Kumar, is an Indian music label and film production company that has
-            grown to become one of the most-subscribed YouTube channels globally. Known for its vast catalog of
-            Bollywood
-            soundtracks, music videos, and film trailers, the company dominates the Indian music market and has expanded
-            into film production and distribution. Under the leadership of Bhushan Kumar, T-Series gained international
-            prominence through its rapid growth on digital platforms, symbolizing the scale of India's entertainment
-            industry and its massive digital audience.
-          </P>
-        </article>
-      </section>
+          </article>
+        </section>
+      </div>
+      <footer>
+        <h3>Top 10</h3>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Pricing</a>
+          </li>
+        </ul>
+        <div class="social-icons">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-pinterest"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <div class="paragraph">
+          <p>&copy; 2025 Top 10</p>
+          <p>Made with ❤️ by CodeWithAryamanAgrahari and ojasmishra-dev</p>
+          <p>All rights reserved.</p>
+        </div>
+      </footer>
     </div>
-    <footer>
-      <h3>Top 10</h3>
-      <ul>
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-        <li>
-          <a href="#">Blog</a>
-        </li>
-        <li>
-          <a href="#">Services</a>
-        </li>
-        <li>
-          <a href="#">Pricing</a>
-        </li>
-      </ul>
-      <div class="social-icons">
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-pinterest"></i>
-        <i class="fab fa-linkedin"></i>
-      </div>
-      <div class="paragraph">
-        <p>&copy; 2025 Top 10</p>
-        <p>Made with ❤️ by CodeWithAryamanAgrahari and ojasmishra-dev</p>
-        <p>All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
-  <div>
-    <a href="#top" class="back-to-top" aria-label="Back to top" title="Back to top">↑</a>
-  </div>
-</body>
-</html> 
+    <div>
+      <a
+        href="#top"
+        class="back-to-top"
+        aria-label="Back to top"
+        title="Back to top"
+        >↑</a
+      >
+    </div>
+  </body>
+</html>
