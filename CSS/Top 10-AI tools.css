@@ -15,9 +15,7 @@
   --secondary-color: #27ae60;
   --hover-color: #8e44ad;
   --btn-color: #2980b9;
-  --section-color: #1a1625;
-  --sec-icon-fill: #27ae60;
-  --article-color: #412859;
+  --section-color: #171b36;
 }
 
 /* Light theme overrides */
@@ -537,4 +535,129 @@ nav svg {
 #theme-switch:checked ~ .page .header-right-capsules p {
   background-color: #dedff4;
   border: 1px solid #000000;
+}
+
+/* Main Selectors */
+main {
+  margin: 3.5rem 0 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2.5rem;
+}
+
+article {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+article h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+#eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+article p {
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto 0;
+  gap: 1rem;
+  width: min(1100px, 92vw);
+}
+
+section {
+  border: 1px solid #343850;
+  background-color: var(--section-color);
+  padding: 1.5rem 1.4rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+section:hover {
+  box-shadow: 0 16px 40px rgba(7, 9, 18, 0.8);
+  transform: translateY(-2px);
+  border-color: rgba(199, 210, 254, 0.6);
+}
+
+.sec-header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.sec-header h3 {
+  font-size: 1.05rem;
+}
+
+.sec-header span {
+  background-color: #292d46;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+}
+
+section p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.sec-footer {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+}
+
+dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+dt {
+  text-transform: uppercase;
+  opacity: 0.7;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+}
+
+dd {
+  margin: 0;
+}
+
+@media (max-width: 370px) {
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  .sec-header {
+    gap: 0.1rem;
+  }
+}
+
+.short-article {
+  width: min(1100px, 92vw);
+  margin: 3rem auto 0;
+}
+
+.short-article p {
+  margin-top: 0.75rem;
 }
