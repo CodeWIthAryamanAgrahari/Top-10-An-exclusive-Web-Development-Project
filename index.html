@@ -94,7 +94,7 @@
           <label for="checkForCarousel" class="forCarousel"></label>
         </div>
         <div class="sibling">
-          <article class="carousel">
+          <div class="carousel">
             <div class="group">
               <a class="cards" href="Top 10-Anime of the World.html"
                 ><img src="Images/image4.png" alt="Top 10 Anime"
@@ -159,7 +159,7 @@
                 ><img src="Images/image2.png" alt="Top 10 Apps"
               /></a>
             </div>
-          </article>
+          </div>
           <div class="car">
             <a href="#" class="cardss"
               ><img src="Images/image.png" alt="image"
@@ -193,6 +193,96 @@
             /></a>
           </div>
         </div>
+      </section>
+      <section class="form">
+        <div class="form-header">
+          <h1>Get In Touch</h1>
+          <h2>Login</h2>
+          <p>
+            Have a suggestion for our next Top 10 list? We'd love to hear from
+            you!
+          </p>
+        </div>
+        <form action="#">
+          <div class="form-row">
+            <div class="placeholder">
+              <label for="firstName"
+                ><i class="fas fa-user"></i>First Name</label
+              >
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="John"
+                required=""
+              />
+            </div>
+            <div class="placeholder">
+              <label for="lastName"><i class="fas fa-user"></i>Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Doe"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="placeholder">
+              <label for="emailAddress"
+                ><i class="fas fa-envelope"></i>Email Address</label
+              >
+              <input
+                type="text"
+                id="emailAddress"
+                name="emailAddress"
+                placeholder="john.doe@example.com"
+                required=""
+              />
+            </div>
+            <div class="placeholder">
+              <label for="phoneNumber"
+                ><i class="fas fa-phone"></i>Phone Number</label
+              >
+              <input
+                type="text"
+                id="phoneNumber"
+                name="phoneNumber"
+                placeholder="+1 (555) 123-4567"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for=""><i class="fas fa-tag"></i>Subject</label>
+            <select name="subject" id="subject" title="Subjects">
+              <option value>Select a topic...</option>
+              <option value="suggestion">Suggestion</option>
+              <option value="feedback">Feedback</option>
+              <option value="collaboration">Collaboration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message"
+              ><i class="fas fa-comment-dots"></i>Your Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Tell us what's on your mind..."
+              required=""
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit">
+              <i class="fas fa-paper-plane"></i>Login and Send
+            </button>
+            <button type="reset"><i class="fas fa-redo"></i>Reset</button>
+          </div>
+        </form>
       </section>
       <footer>
         <div class="footer-inner">
