@@ -9,6 +9,7 @@
   --section-color: #fff;
   --span-color: #eef2ff;
   --font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --muted: #5b6475;
 }
 
 /* Light theme overrides */
@@ -57,6 +58,7 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
   display: flex;
   flex-direction: column;
+  padding-top: 6rem;
 }
 
 .theme-switch-input {
@@ -350,4 +352,87 @@ nav svg {
     transition: all 0.9s ease;
     background: transparent;
   }
+}
+
+/* Main Selectors */
+.container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+
+article {
+  background-color: var(--color-1);
+  padding: 32px;
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article > span {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 12px;
+  color: #4f46e5;
+}
+
+article > h1 {
+  font-size: clamp(32px, 5vw, 46px);
+  margin: 10px 0 12px;
+}
+
+article > p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-flex;
+  background-color: red;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-weight: 700;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.primary-btn {
+  color: #fff;
+  background: linear-gradient(135deg, #4f46e5, #14b8a6);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+.ghost-btn {
+  border-color: #dfe3ec;
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f172a;
+}
+
+.dls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  font-size: 0.8rem;
+}
+
+.dls dl {
+  display: inline-flex;
+  flex-direction: column;
+  border-radius: 20px;
+  gap: 2px;
+}
+
+.dls dl dt {
+  color: var(--muted);
 }
