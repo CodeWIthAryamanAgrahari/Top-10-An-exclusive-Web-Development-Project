@@ -398,19 +398,24 @@ article {
 .title-breadcrumbs {
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 12px;
   color: #4f46e5;
+  margin: 8px 0 10px;
+  display: block;
 }
 
 .title {
   font-size: clamp(32px, 5vw, 46px);
   margin: 10px 0 12px;
+  display: block;
 }
 
-.article1 > p {
+.lede {
   font-size: 16px;
   line-height: 1.6;
+  margin: 8px 0 10px;
+  display: block;
 }
 
 .buttons {
@@ -458,12 +463,14 @@ article {
   border-radius: 20px;
 }
 
-.dls dl dt {
+.dt {
   font-size: 13px;
+  margin: 12px 0;
 }
 
-.dls dl dd {
+.dd {
   font-weight: 700;
+  margin: 12px 0;
   font-size: 18px;
 }
 
@@ -514,18 +521,6 @@ article {
 .pre-body-header dl {
   display: inline-flex;
   flex-direction: column;
-}
-
-.pre-body-header dl dt {
-  font-size: 13px;
-  margin-inline-start: 0px;
-  margin-block-end: 1em;
-}
-
-.pre-body-header dl dd {
-  font-weight: 700;
-  margin-inline-start: 0px;
-  margin-block-end: 1em;
 }
 
 .pre-body-header-status {
@@ -585,6 +580,11 @@ article {
   margin-top: 20px;
 }
 
+.section1 > h2 {
+  margin: 8px 0 10px;
+  font-size: 28px;
+}
+
 .sec-grid-items {
   background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
@@ -603,4 +603,63 @@ article {
 
 .sec-grid-items p {
   margin: 0;
+}
+
+.section {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  align-items: center;
+}
+
+.section .title2 {
+  margin: 10px 0 12px;
+  font-weight: 700;
+}
+
+.section2-flex1 .lede {
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.section2-flex1-ul {
+  padding-left: 18px;
+  margin: 1em 0;
+  line-height: 1.6;
+}
+
+.section2-flex2 {
+  background: rgba(255, 255, 255, 0.55);
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid #dfe3ec;
+}
+
+.section2-flex2-header {
+  padding: 10px 0 14px;
+  border-bottom: 1px solid #dfe3ec;
+}
+
+.section2-flex2-header .title2 {
+  margin: 6px 0;
+  font-weight: 700;
+}
+
+.section2-flex2-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-top: 12px;
+  gap: 12px;
+}
+
+.section2-flex2-grid-items {
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #dfe3ec;
 }
