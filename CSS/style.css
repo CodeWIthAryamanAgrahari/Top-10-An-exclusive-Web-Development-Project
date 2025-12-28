@@ -167,17 +167,19 @@ nav a {
 
 nav .underline-link:hover {
   transform: scale(1.05);
-  color: var(--text-color);
   transition: all 0.7s ease;
   gap: 10px;
   border-radius: 5px;
   box-shadow: 0 4px 8px #35374b;
   text-decoration: none;
+  color: var(--section-color);
+  background-color: #35374b;
 }
 
 /* Light mode: make nav link text white on hover for contrast */
 #theme-switch:checked ~ .page nav .underline-link:hover {
-  color: #ffffff;
+  background-color: #35374b;
+  color: #ecf0f1;
 }
 
 .home-link {
@@ -443,7 +445,7 @@ article {
 .primary-btn {
   color: #fff;
   background: linear-gradient(135deg, #4f46e5, #14b8a6);
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 38%);
 }
 
 .ghost-btn {
@@ -483,7 +485,11 @@ article {
   box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
   overflow: hidden;
   gap: 14px;
-  background: #fff;
+  background: var(--section-color);
+}
+
+#theme-switch:checked ~ .page .article2 {
+  border-color: transparent;
 }
 
 .preview-header {
@@ -493,6 +499,10 @@ article {
   padding: 16px 18px;
   align-items: center;
   font-weight: 600;
+}
+
+#theme-switch:checked ~ .page .article2 .preview-header {
+  border-color: #0066ff;
 }
 
 .dots {
@@ -505,6 +515,10 @@ article {
   width: 10px;
   border-radius: 50%;
   background-color: #317fc5;
+}
+
+#theme-switch:checked ~ .page .three-dots {
+  background-color: #fff;
 }
 
 .preview-body {
@@ -530,6 +544,11 @@ article {
   font-weight: 600;
   padding: 8px 12px;
   border-radius: 12px;
+}
+
+#theme-switch:checked ~ .page .pre-body-header-status {
+  color: #000;
+  background-color: #fff;
 }
 
 .performance-bar {
@@ -562,7 +581,7 @@ article {
 }
 
 .capsule {
-  color: #000;
+  color: var(--text-color);
   font-size: 13px;
   font-weight: 600;
   border: 1px solid #dfe3ec;
@@ -697,6 +716,18 @@ article {
   font-size: 14px;
 }
 
+select {
+  cursor: pointer;
+}
+
+input[id="rememberMe"] {
+  cursor: pointer;
+}
+
+label[for="rememberMe"] {
+  cursor: pointer;
+}
+
 .form-field-wrapper {
   position: relative;
   z-index: 0;
@@ -797,6 +828,7 @@ footer {
   padding: 3rem 0 2rem;
   border: 1px solid rgba(255, 255, 255, 0.04);
   margin-top: 3rem;
+  box-shadow: 3px -1px 7px 0px rgb(0 0 0 / 47%);
 }
 
 #theme-switch:checked ~ .page footer {
