@@ -462,7 +462,7 @@ article {
 .primary-btn {
   color: #fff;
   background: linear-gradient(135deg, #4f46e5, #14b8a6);
-  box-shadow: 0 20px 60px rgb(0 0 0 / 38%);
+  box-shadow: 0px 10px 10px 0px rgb(0 0 0 / 38%);
 }
 
 .primary-btn:hover {
@@ -483,6 +483,13 @@ article {
   border-color: #dfe3ec;
   background: rgba(255, 255, 255, 0.85);
   color: #0f172a;
+  box-shadow: 0px 10px 4px rgb(0 0 0 / 12%);
+}
+
+.ghost-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 10px rgb(0 0 0 / 25%);
+  background: rgba(255, 255, 255, 1);
 }
 
 .dls {
@@ -569,6 +576,11 @@ article {
   flex-direction: column;
 }
 
+.pre-body-header dt {
+  font-size: 13px;
+  margin: 6px 0;
+}
+
 .pre-body-header-status {
   background-color: #d1fae5;
   color: #06624b;
@@ -582,18 +594,60 @@ article {
   background-color: #fff;
 }
 
+.performance-bar-container {
+  width: 100%;
+  height: 100%;
+  padding: 1em 0 0.5em;
+  position: relative;
+}
+
 .performance-bar {
   width: 100%;
   height: 8px;
   border-radius: 999px;
   background: #e5e9f0;
   position: relative;
-  margin: 1em 0 0;
+}
+
+#theme-switch:checked ~ .page .performance-bar {
+  background: #2c2f45;
+}
+
+.performance-bar-status {
+  height: 10px;
+  width: 20px;
+  color: black;
+  font-weight: 600;
+  position: absolute;
+  top: -20px;
+  left: 69%;
+  opacity: 0;
+  background-color: transparent;
+  padding: 15px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #dfe3ec;
+}
+
+#theme-switch:checked ~ .page .performance-bar-status {
+  color: #fff;
+  border-color: #2c2f45;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .performance-bar::after {
   content: "";
-  width: 75%;
+  width: 0%;
   height: 8px;
   border-radius: 999px;
   position: absolute;
@@ -601,6 +655,19 @@ article {
   left: 0;
   background: linear-gradient(to right, #4f47e4, #15b6a7);
   z-index: 1;
+  transition: width 0.7s ease;
+}
+
+#theme-switch:checked ~ .page .performance-bar::after {
+  background: linear-gradient(to right, #8b5cf6, #2dd4bf);
+}
+
+.performance-bar-container:hover > .performance-bar::after {
+  width: 75%;
+}
+
+.performance-bar-container:hover > .performance-bar-status {
+  animation: show 0.3s ease 0.67s forwards;
 }
 
 .capsules {
