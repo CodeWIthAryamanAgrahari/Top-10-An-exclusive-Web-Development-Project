@@ -3,19 +3,24 @@
 :root {
   --color-1: #f2f7fb;
   --text-color: #1f2430;
-  --background-color: radial-gradient(
+  --background-color:
+    radial-gradient(
       circle at 20% 20%,
       rgba(79, 70, 229, 0.12),
       transparent 35%
     ),
-    radial-gradient(circle at 80% 0%, rgba(20, 184, 166, 0.14), transparent 28%),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(20, 184, 166, 0.14),
+      transparent 28%
+    ),
     #f7f8fb;
   --secondary-color: #1a7f37;
   --hover-color: #6f42c1;
   --section-color: #fff;
   --span-color: #eef2ff;
-  --font-family: "Inter", "Poppins", "Segoe UI", Tahoma, Geneva, Verdana,
-    sans-serif;
+  --font-family:
+    "Inter", "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --muted: #5b6475;
 }
 
@@ -55,14 +60,18 @@ body {
   background: var(--background-color);
   color: var(--text-color);
   overflow-x: hidden;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 .page {
   min-height: 100vh;
   background: var(--background-color);
   color: var(--text-color);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
   display: flex;
   flex-direction: column;
   padding-top: 6rem;
@@ -132,7 +141,9 @@ nav {
   top: 0;
   z-index: 10000;
   gap: 8px;
-  transition: background-color 0.4s ease, box-shadow 0.3s ease,
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.3s ease,
     backdrop-filter 0.3s ease;
   -webkit-backdrop-filter: saturate(140%) blur(6px);
   backdrop-filter: saturate(140%) blur(6px);
@@ -211,8 +222,11 @@ nav svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.25s ease, border-color 0.25s ease,
-    transform 0.2s ease, color 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease,
+    color 0.25s ease;
 }
 
 .theme-toggle:hover {
@@ -438,7 +452,10 @@ article {
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
   cursor: pointer;
 }
 
@@ -446,6 +463,20 @@ article {
   color: #fff;
   background: linear-gradient(135deg, #4f46e5, #14b8a6);
   box-shadow: 0 20px 60px rgb(0 0 0 / 38%);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 70px rgb(0 0 0 / 45%);
+  background: linear-gradient(135deg, #14b8a6, #4f46e5);
+}
+
+#theme-switch:checked ~ .page .primary-btn {
+  background: linear-gradient(135deg, #8b5cf6, #2dd4bf);
+}
+
+#theme-switch:checked ~ .page .primary-btn:hover {
+  background: linear-gradient(135deg, #2dd4bf, #8b5cf6);
 }
 
 .ghost-btn {
@@ -589,6 +620,11 @@ article {
   border-radius: 12px;
 }
 
+#theme-switch:checked ~ .page .capsule {
+  background: #fff;
+  color: #000;
+}
+
 .pre-body-para {
   font-size: 14px;
 }
@@ -611,6 +647,11 @@ article {
   padding: 18px;
   border-radius: 16px;
   border: 1px solid #dfe3ec;
+}
+
+#theme-switch:checked ~ .page .sec-grid-items {
+  background-color: var(--color-1);
+  border-color: #2c2f45;
 }
 
 .sec-grid-items .icon {
@@ -659,6 +700,11 @@ article {
   border: 1px solid #dfe3ec;
 }
 
+#theme-switch:checked ~ .page .section2-flex2 {
+  background: #080917;
+  border-color: #2c2f45;
+}
+
 .section2-flex2-header {
   padding: 10px 0 14px;
   border-bottom: 1px solid #dfe3ec;
@@ -679,9 +725,20 @@ article {
 .section2-flex2-grid-items {
   background: #fff;
   box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
-  padding: 12px;
+  padding: 6px 12px;
   border-radius: 12px;
   border: 1px solid #dfe3ec;
+}
+
+#theme-switch:checked ~ .page .section2-flex2-grid-items {
+  background: #171b36;
+  border-color: #2c2f45;
+  color: #fff;
+}
+
+#theme-switch:checked ~ .page .section2-flex2-grid-items .muted {
+  color: #fff;
+  opacity: 0.7;
 }
 
 .form-section {
@@ -705,6 +762,11 @@ article {
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
+}
+
+#theme-switch:checked ~ .page .form-section > div {
+  background-color: #080917;
+  border-color: #2c2f45;
 }
 
 .form-heading {
@@ -746,6 +808,14 @@ label[for="rememberMe"] {
   transition: border-color 0.2s ease;
   display: block;
   box-sizing: border-box;
+  transition: border-color 0.6s ease;
+}
+
+#theme-switch:checked ~ .page .form-section form input,
+#theme-switch:checked ~ .page .form-section form select,
+#theme-switch:checked ~ .page .form-section form textarea {
+  background-color: #090c20;
+  color: #fff;
 }
 
 .form-section form textarea {
@@ -771,6 +841,10 @@ label[for="rememberMe"] {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s ease;
+}
+
+#theme-switch:checked ~ .page .form-field-wrapper::before {
+  background: none;
 }
 
 .form-field-wrapper:focus-within::before {
@@ -801,6 +875,12 @@ label[for="rememberMe"] {
   font-weight: 600;
 }
 
+#theme-switch:checked ~ .page form .ghost-btn {
+  background-color: #4e45e3;
+  border-color: #4e45e3;
+  color: #fff;
+}
+
 .section4 {
   display: flex;
   flex-direction: column;
@@ -814,6 +894,16 @@ label[for="rememberMe"] {
   border: 1px solid #dcdfe8;
   padding: 24px;
   margin-top: 3rem;
+}
+
+#theme-switch:checked ~ .page .section4 {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, #4e45e3 25%, #000),
+    color-mix(in srgb, #14b8a6 25%, #000)
+  );
+  border-color: #2c2f45;
+  color: #fff;
 }
 
 .section4 .title2 {
@@ -903,7 +993,9 @@ footer {
   border-radius: 50%;
   border: 1px solid #c5c9ff;
   color: #000;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 #theme-switch:checked ~ .page .social-icons a {
