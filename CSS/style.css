@@ -978,7 +978,56 @@ label[for="rememberMe"] {
   margin-block-end: 0.4em;
 }
 
-/* Footer Selectors */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  border: 1px solid red;
+  anchor-name: --carousel;
+  position: relative;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.group {
+  display: flex;
+  padding-right: 1em;
+  gap: 1em;
+  animation: move 40s linear infinite;
+}
+
+.car-items {
+  flex: 0 0 20em;
+  color: #000;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: Kalam, cursive;
+  font-weight: 1000;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.move-left {
+  position-anchor: --carousel;
+  position: fixed;
+  top: 0;
+  left: 50px;
+}
+
+#move-toggle {
+  /* display: none; */
+}
+
 /* Footer Selectors */
 footer {
   background-color: #fff;
