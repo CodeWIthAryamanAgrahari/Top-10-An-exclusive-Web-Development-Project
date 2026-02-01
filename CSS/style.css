@@ -978,54 +978,128 @@ label[for="rememberMe"] {
   margin-block-end: 0.4em;
 }
 
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  margin: 3rem auto 0;
+  align-items: center;
+}
+
+.carousel-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+#theme-switch:checked ~ .page .carousel-container h2 {
+  color: #fff;
+}
+
 .carousel {
   display: flex;
-  overflow-x: auto;
-  border: 1px solid red;
-  anchor-name: --carousel;
+  gap: 1em;
   position: relative;
+  width: 100%;
+  overflow-x: auto;
+  anchor-name: --carousel;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .carousel::-webkit-scrollbar {
   display: none;
 }
 
-.group {
-  display: flex;
-  padding-right: 1em;
-  gap: 1em;
-  animation: move 40s linear infinite;
+.carousel::scroll-button(right),
+.carousel::scroll-button(left) {
+  content: "→";
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4e45e3, #00d4ff);
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding-bottom: 0.1em;
+  font-family: Consolas, monospace;
+  font-size: 30px;
+  position-anchor: --carousel;
+  position: fixed;
+  position-area: right center;
+  translate: -50% 0;
+}
+
+.carousel::scroll-button(left) {
+  content: "←";
+  position-area: left center;
+  translate: 50% 0;
+}
+
+#theme-switch:checked ~ .page .carousel::scroll-button(right),
+#theme-switch:checked ~ .page .carousel::scroll-button(left) {
+  background: linear-gradient(135deg, #4e45e3, #00d4ff);
+}
+
+@media (max-width: 1054px) {
+  .carousel::scroll-button(right) {
+    translate: -25%;
+  }
+
+  .carousel::scroll-button(left) {
+    translate: 25%;
+  }
+}
+
+.carousel::scroll-button(right):disabled,
+.carousel::scroll-button(left):disabled {
+  opacity: 0.6;
+  cursor: auto;
 }
 
 .car-items {
-  flex: 0 0 20em;
+  flex: 0 0 16em;
   color: #000;
   display: flex;
-  height: 100%;
+  height: 3em;
   justify-content: center;
   align-items: center;
   font-family: Kalam, cursive;
   font-weight: 1000;
+  font-size: 1.5rem;
+  background-color: #dfe3ec;
+  border-radius: 20px;
+  scroll-snap-align: start;
 }
 
-@keyframes move {
-  from {
-    transform: translateX(0);
+@media (max-width: 960px) {
+  .car-items {
+    flex: 0 0 11.3em;
   }
-  to {
-    transform: translateX(-100%);
+}
+
+@media (max-width: 740px) {
+  .car-items {
+    flex: 0 0 13em;
   }
 }
 
-.move-left {
-  position-anchor: --carousel;
-  position: fixed;
-  top: 0;
-  left: 50px;
+@media (max-width: 620px) {
+  .car-items {
+    flex: 0 0 calc(80vw + 1.4rem);
+  }
+
+  .carousel::scroll-button(right) {
+    translate: -10%;
+  }
+
+  .carousel::scroll-button(left) {
+    translate: 10%;
+  }
 }
 
-#move-toggle {
-  /* display: none; */
+#theme-switch:checked ~ .page .car-items {
+  background-color: #171b36;
+  color: #fff;
 }
 
 /* Footer Selectors */
